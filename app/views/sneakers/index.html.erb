@@ -1,0 +1,11 @@
+<h1>Sneakers list</h1>
+
+
+<ul class="list-group-item">
+<% @sneakers.each do |sneaker| %>
+  <h3> Sneaker Name: <%= sneaker.name %> </h3>
+  <p> Price: £<%= sneaker.price %> </p>
+  <p>Description: <%= sneaker.description %></p>
+  </li>
+<% end %>
+</ul>
