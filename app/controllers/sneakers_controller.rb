@@ -1,5 +1,5 @@
 class SneakersController < ApplicationController
-
+  before_action :authenticate_user!
   def index
     @sneakers = Sneaker.all
   end
@@ -14,7 +14,8 @@ class SneakersController < ApplicationController
 
   def create
     @sneaker = Sneaker.new(sneaker_params)
-    @sneaker.save
+    @sneaker.user = current_user
+    redirect_to sneakers_path if @sneaker.save!
   end
 
   def destroy
@@ -25,6 +26,6 @@ class SneakersController < ApplicationController
   private
 
   def sneaker_params
-    params.require(:sneaker).permit(:name, :price, :description, { photos: [] })
+    params.require(:sneaker).permit(:name, :price, :description, :image_url)
   end
 end
