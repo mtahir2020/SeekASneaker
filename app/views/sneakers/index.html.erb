@@ -1,12 +1,25 @@
-<h1>Sneakers list</h1>
+<div class="container">
+
+  <div class="banner">
+  </div>
+
+  <div class="container text-center mt-3">
+    <div class="row">
+      <% @sneakers.each do |sneaker| %>
+        <div class="col">
+          <div class="card mb-3" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+              <div class="card-body card-font">
+                <h5 class="card-title"><b> <%= sneaker.name %></b></h5>
+                <p class="card-text"><%= sneaker.description %></p>
+                <p class="card-text">£<%= sneaker.price %></p>
+                <%= link_to "See more", sneaker_path(sneaker), class: "btn btn-danger" %>
+              </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
 
 
-<ul class="list-group-item">
-<% @sneakers.each do |sneaker| %>
-  <h3> Sneaker Name: <%= sneaker.name %> </h3>
-  <p> Price: £<%= sneaker.price %> </p>
-  <p>Description: <%= sneaker.description %></p>
-  </li>
-<% end %>
-<%= render 'pages/card' %>
-</ul>
+</div>
