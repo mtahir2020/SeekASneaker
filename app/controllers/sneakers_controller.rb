@@ -1,4 +1,5 @@
 class SneakersController < ApplicationController
+
   def index
     @sneakers = Sneaker.all
   end
@@ -24,6 +25,6 @@ class SneakersController < ApplicationController
   private
 
   def sneaker_params
-    params.require(:sneaker).permit(:name, :price, :description)
+    params.require(:sneaker).permit(:name, :price, :description, { photos: [] })
   end
 end
