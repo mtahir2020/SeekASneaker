@@ -1,7 +1,12 @@
 class SneakersController < ApplicationController
   before_action :authenticate_user!
   def index
-    @sneakers = Sneaker.all
+    if params[:search]
+      @search = params[:search]
+      @sneakers = Sneaker.where("name ILIKE ?", "%#{params[:search]}%")
+    else
+      @sneakers = Sneaker.all
+    end
   end
 
   def show

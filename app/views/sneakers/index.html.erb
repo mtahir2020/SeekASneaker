@@ -1,15 +1,23 @@
-<div class="container">
+<div class="banner">
+  <div class="top-left">SeekASneaker</div>
+  <div class="bottom-left">Buy & sell sneakers with a single click...</div>
+    <% if user_signed_in? %>
+      <%= link_to "List sneakers", new_sneaker_path, class: "btn btn-danger", id: "banner-btn"%>
+    <% end %>
+</div>
 
-  <div class="banner">
-  </div>
-
-  <div class="container text-center mt-3">
-    <div class="row">
+<div class="d-flex justify-content-center">
+  <div class="w-75 d-flex align-items-center flex-column mt-4">
+    <% if user_signed_in? %>
+      <p>Welcome back <%= current_user.email %>, check out the latest sneakers</p>
+    <% end %>
+    <h3 class="mb-4"><b>Latest sneakers</b></h3>
+    <div class="row border">
       <% @sneakers.each do |sneaker| %>
         <div class="col">
-          <div class="card mb-3" style="width: 18rem;">
+          <div class="card text-center shadow mb-3" style="width: 18rem;">
             <img src="..." class="card-img-top" alt="...">
-              <div class="card-body card-font">
+              <div class="card-body">
                 <h5 class="card-title"><b> <%= sneaker.name %></b></h5>
                 <p class="card-text"><%= sneaker.description %></p>
                 <p class="card-text">£<%= sneaker.price %></p>
@@ -20,6 +28,7 @@
       <% end %>
     </div>
   </div>
-
-
 </div>
+
+<%# center cards in their container? %>
+<%# if/else for search results not working correctly %>
