@@ -1,7 +1,12 @@
-<div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
-  <div class="cards">
-    <p class="card-text">description</p>
-    <p class="card-text">price</p>
+
+<div class="d-flex flex-column sneakers-card ms-3">
+  <div class="d-flex py-2 px-2 justify-content-between border">
+    <div><%= sneaker.name %></div>
+    <div><%= sneaker.price %></div>
+  </div>
+  <div class="img-container border-top justify-content-center d-flex"><%= image_tag("iron", class: "sneaker-img") %></div>
+  <div class="d-flex flex-column mt-2 border">
+    <div class="ps-2"><p><%= sneaker.description %></p></div>
+    <div class="ps-2"><%= link_to "See more", "www.google.com", class: "btn btn-danger" %></div>
   </div>
 </div>
