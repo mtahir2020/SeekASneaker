@@ -1,7 +1,40 @@
 .banner {
-  background-image: url("danilo-capece-NoVnXXmDNi0-unsplash");
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),url("danilo-capece-NoVnXXmDNi0-unsplash");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 10%;
   height: 500px;
+  position: relative;
+  color: white;
+
+}
+
+.bottom-left {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  font-size: 2rem;
+  font-family: 'Rubik';
+  text-shadow: 1px 1px 1px #000;
+  font-weight: bold;
+}
+
+.top-left {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  font-size: 3rem;
+  font-family: 'Rubik';
+  text-shadow: 1px 1px 1px #000;
+  font-weight: bold;
+}
+
+.footer-banner {
+  background: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) ),url("paul-volkmer-updW-QUccFE-unsplash");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 70% 75%;
+  height: 150px;
+  position: relative;
+  color: white;
 }

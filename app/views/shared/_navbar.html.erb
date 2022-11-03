@@ -1,8 +1,17 @@
 <div class="navbar border-bottom navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
-    <%= link_to "#", class: "navbar-brand" do %>
-      <%= image_tag "img_4815" %>
-    <% end %>
+    <div class="d-flex align-items-center">
+    <ul class="navbar-nav me-auto d-flex align-items-center">
+      <li class="nav-item"><%= link_to "#", class: "navbar-brand" do %>
+        <%= image_tag "img_4815" %>
+      <% end %>
+      </li>
+      <li class="nav-item pt-3"><p><b>SeekASneaker</b></p>
+      </li>
+      </ul>
+    </div>
+
+    <%= render 'shared/search' %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
