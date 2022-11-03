@@ -1,0 +1,6 @@
+<h3>Add a sneaker to your <%= @order %> order</h3>
+        <%= simple_form_for [@sneaker, @order] do |f| %>
+          <%= f.association :user, prompt: "Select a sneaker", input_html: {data: {controller: "tom-select"}} %>
+          <%= f.association :sneaker_id, input_html: { hidden: true } %>
+          <%= f.submit class: "btn btn-flat" %>
+        <% end %>
