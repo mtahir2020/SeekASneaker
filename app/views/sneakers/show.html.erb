@@ -6,3 +6,11 @@
     <li> £ <%= @sneaker.price %>
     <%# <%= @sneaker.photo ? image_tag @sneaker.photo %>
   </ul>
+
+
+<%= simple_form_for [@sneaker, @order] do |f| %>
+  <%# <%= hidden_field_tag :user, "true" %>
+  <%# <%= f.hidden_field :order_id, value: params[:order_id] %>
+  <%= f.submit "Buy", class: "btn btn-primary" %>
+  <%# <%= link_to "back", root_path %>
+<% end %>

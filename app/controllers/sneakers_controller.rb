@@ -11,6 +11,10 @@ class SneakersController < ApplicationController
 
   def show
     @sneaker = Sneaker.find(params[:id])
+    @order = Order.new
+    # if @order.save
+    #   redirect_to sneaker(@sneaker)
+    # end
   end
 
   def new
