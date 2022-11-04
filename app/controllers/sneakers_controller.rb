@@ -1,5 +1,8 @@
 class SneakersController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_sneaker, only: %i[ show  update destroy ]
+
+
   def index
     if params[:search]
       @search = params[:search]
@@ -10,27 +13,47 @@ class SneakersController < ApplicationController
   end
 
   def show
-    @sneaker = Sneaker.find(params[:id])
+
   end
+
 
   def new
     @sneaker = Sneaker.new
   end
 
+
+
   def create
     @sneaker = Sneaker.new(sneaker_params)
     @sneaker.user = current_user
-    redirect_to sneakers_path if @sneaker.save!
+    if @sneaker.save
+      redirect_to sneaker_path(@sneaker), notice: "Post was successfully created."
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+
+  def update
+    if @sneaker.update(sneaker_params)
+      redirect_to @sneaker, notice: "Post was successfully updated"
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   def destroy
     @sneaker = Sneaker.find(params[:id])
     @sneaker.destroy
+    redirect_to root_path, notice: "Post was delrted"
   end
 
   private
 
+  def set_sneaker
+    @sneaker = Sneaker.find(params[:id])
+  end
+
   def sneaker_params
-    params.require(:sneaker).permit(:name, :price, :description, :image_url)
+    params.require(:sneaker).permit(:name, :price, :description, :photo)
   end
 end

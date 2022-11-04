@@ -28,10 +28,10 @@
               <div>£<%= sneaker.name %></div>
               <div><%= sneaker.price %></div>
             </div>
-            <div class="img-container card-border justify-content-center d-flex"><%= image_tag("iron", class: "sneaker-img") %></div>
+            <div class="img-container card-border justify-content-center d-flex"><%= cl_image_tag(sneaker.photo.key,  class: "sneaker-img") %></div>
             <div class="d-flex flex-column py-3">
               <div class="ps-2"><p><%= sneaker.description %></p></div>
-              <div class="ps-2"><%= link_to "See more", "www.google.com", class: "btn btn-danger" %></div>
+              <div class="ps-2"><%= link_to "See more", sneaker, class: "btn btn-danger" %></div>
               </div>
             </div>
         </div>
