@@ -3,11 +3,11 @@ Rails.application.routes.draw do
   root to: "sneakers#index"
 
   resources :sneakers, only: %i[index show create new destroy] do
-    resources :orders
+    resources :orders, only: %i[create]
   end
 
 
-  # resources :orders, only: :show
+  resources :orders, only: :show
 
   devise_for :users
 
