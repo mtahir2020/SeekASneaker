@@ -7,5 +7,6 @@ import { application } from "./application"
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
-import ReadmoreController from "./readmore_controller"
-application.register("readmore", ReadmoreController)
+import TypedJsController from "./typed_js_controller"
+application.register("typed-js", TypedJsController)
+
