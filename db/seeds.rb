@@ -7,13 +7,7 @@
 #   Character.create(name: "Luke", movie: movies.first)
 require 'faker'
 
-require "open-uri"
-
-# file = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg")
-# sneaker = Sneaker.new(name: "NES", price: 50, description: "A great console")
-# sneaker.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
-# sneaker.save
-
+Order.destroy_all
 Sneaker.destroy_all
 User.destroy_all
 
