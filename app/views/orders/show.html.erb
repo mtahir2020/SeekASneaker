@@ -1,0 +1,11 @@
+<div class='d-flex align-items-center justify-content-center flex-column'>
+  <div class='flex border justify-content-center mt-3'><h1>Orders page!</h1></div>
+  <h2>Registered e-mail: <strong></h2>
+  <h2 class='mb-5'><%= current_user.email %></strong></h2>
+  <div class='border-strong'>
+    <p class='line'>Order details:</p>
+    <p class='mb-3 line'><%= @order.sneaker.name %></p>
+    <p class='line'><%= @order.created_at %></p>
+    <p class='line'><strong>Total: £ <%= @order.sneaker.price %></strong></p>
+  </div>
+</div>
