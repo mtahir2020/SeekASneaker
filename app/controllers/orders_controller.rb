@@ -21,7 +21,6 @@ class OrdersController < ApplicationController
   def show
     @order = Order.find(params[:id])
     # @sneaker = Sneaker.find(params[:sneaker_id])
-    # raise
   end
 
   # def confirm
