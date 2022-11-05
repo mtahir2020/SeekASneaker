@@ -12,13 +12,13 @@ class OrdersController < ApplicationController
     @order.user = current_user
 
     if @order.save
-      redirect_to sneakers_path
+      redirect_to sneaker_orders_url(@sneaker)
 
     end
   end
 
   def show
-    @order = Order.find(:order_id)
+    @order = Order.find(params[:order_id])
     @sneaker = Sneaker.find(params[:id])
   end
 
