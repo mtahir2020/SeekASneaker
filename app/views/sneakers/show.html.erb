@@ -1,8 +1,26 @@
 <%# diplaying out added sneakers %>
-<%= @sneaker.name %>
-
-  <ul>
-    <li>Description: <%= @sneaker.description %></li>
-    <li> £ <%= @sneaker.price %>
+<div class="container-show">
+  <h3>
+    <strong><%= @sneaker.name %></strong>
+  </h3>
+   <ul>
+    <li><p><strong>Description: <%= @sneaker.description %></strong></p></li>
+    <li> £ <%= @sneaker.price %></li>
     <%# <%= @sneaker.photo ? image_tag @sneaker.photo %>
   </ul>
+    <div class="img-show"><%= cl_image_tag @sneaker.photo.key, height: 300, width: 400, :gravity=>"auto", :crop=>"fill"  %></div>
+    <div>
+    <%# <%= link_to "Edit", edit_sneaker_path(@sneaker) %>
+    <%= link_to "Back ", root_path %>
+
+    <%= button_to "Destroy this article", @sneaker, method: :delete %>
+  </div>
+</div>
+
+
+<%= simple_form_for [@sneaker, @order] do |f| %>
+  <%# <%= hidden_field_tag :user, "true" %>
+  <%# <%= f.hidden_field :order_id, value: params[:order_id] %>
+  <%= f.submit "Buy", class: "btn btn-primary" %>
+  <%# <%= link_to "back", root_path %>
+<% end %>

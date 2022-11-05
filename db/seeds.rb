@@ -15,12 +15,13 @@ user = User.new(email: "user@gmail.com", password: "123456")
 user.save!
 puts "creating"
 
-10.times do
-  new_sneaker = Sneaker.create(
-    user: user,
-    name: Faker::Science.modifier,
-    price: Faker::Number.between(from: 10.0, to: 100.0),
-    description: Faker::Commerce.product_name,
-  )
-  puts "creating #{new_sneaker}"
-end
+# 10.times do
+#   new_sneaker = Sneaker.create(
+#     user: user,
+#     name: Faker::Science.modifier,
+#     price: Faker::Number.between(from: 10.0, to: 100.0),
+#     description: Faker::Commerce.product_name
+#   )
+
+#   puts "creating #{new_sneaker}"
+# end

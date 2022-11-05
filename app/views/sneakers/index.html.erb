@@ -1,25 +1,47 @@
-<div class="container">
+<div class="banner">
+  <div class="top-left">SeekASneaker</div>
+  <div class="bottom-left">Buy & sell sneakers with a single click...</div>
+    <% if user_signed_in? %>
+      <%= link_to "List sneakers", new_sneaker_path, class: "btn btn-danger", id: "banner-btn"%>
+    <% end %>
+</div>
 
-  <div class="banner">
-  </div>
-
-  <div class="container text-center mt-3">
+<div class="d-flex justify-content-center">
+  <div class="w-75 d-flex align-items-center flex-column mt-4">
+    <% if user_signed_in? %>
+      <p class="mb-4">Welcome back <%= current_user.email %></p>
+    <% end %>
+    <% if @search && @search.length == 1%>
+      <h3 class="mb-2 fs-1 heading-red"><b><%= @sneakers.length %> SNEAKER FOUND</b></h3>
+      <%= link_to "Refresh page", root_path, class: "mb-4" %>
+    <% elsif @search && @search.length >= 1 %>
+      <h3 class="mb-3 fs-1 heading-red"><b><%= @sneakers.length %> SNEAKERS FOUND</b></h3>
+      <%= link_to "Refresh page", root_path, class: "mb-4" %>
+    <% else %>
+      <h3 class="mb-5 fs-1 heading-red"><b>LATEST SNEAKERS</b></h3>
+    <% end %>
     <div class="row">
       <% @sneakers.each do |sneaker| %>
         <div class="col">
-          <div class="card mb-3" style="width: 18rem;">
-            <img src="..." class="card-img-top" alt="...">
-              <div class="card-body card-font">
-                <h5 class="card-title"><b> <%= sneaker.name %></b></h5>
-                <p class="card-text"><%= sneaker.description %></p>
-                <p class="card-text">£<%= sneaker.price %></p>
-                <%= link_to "See more", sneaker_path(sneaker), class: "btn btn-danger" %>
+          <div class="d-flex flex-column justify-content-center sneakers-card mb-3">
+            <div class="d-flex py-3 px-2 justify-content-between align-items-center">
+              <div>£<%= sneaker.name %></div>
+              <div><%= sneaker.price %></div>
+            </div>
+            <div class="img-container card-border justify-content-center d-flex"><%= cl_image_tag(sneaker.photo.key,  class: "sneaker-img") %></div>
+            <div class="d-flex flex-column py-3">
+              <div class="ps-2"><p><%= sneaker.description %></p></div>
+              <div class="ps-2"><%= link_to "See more", sneaker, class: "btn btn-danger" %></div>
               </div>
-          </div>
+            </div>
         </div>
       <% end %>
     </div>
   </div>
-
-
 </div>
+
+
+
+
+<%# center cards in their container? %>
+<%# if/else for search results not working correctly %>

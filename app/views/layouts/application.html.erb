@@ -12,11 +12,11 @@
     <script src="https://kit.fontawesome.com/2a23fa00c4.js" crossorigin="anonymous"></script>
   </head>
 
-  <body>
+  <body class="background-grey">
+    <%# <p class="alert"><%= alert</p> %>
+    <%# <p class="notice"><%= notice</p> %>
     <%= render 'shared/navbar' %>
     <%= yield %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
     <%= render "shared/flashes" %>
     <%= render 'shared/footer' %>
   </body>
