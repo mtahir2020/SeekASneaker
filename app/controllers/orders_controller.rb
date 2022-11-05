@@ -1,4 +1,5 @@
 class OrdersController < ApplicationController
+  before_action :authenticate_user!
 
   def new
     @order = Order.new
@@ -10,21 +11,26 @@ class OrdersController < ApplicationController
     @sneaker = Sneaker.find(params[:sneaker_id])
     @order.sneaker = @sneaker
     @order.user = current_user
+    @order.save
 
     if @order.save
-      redirect_to sneaker_orders_url(@sneaker)
-
+      redirect_to order_path(@order)
     end
   end
 
   def show
-    @order = Order.find(params[:order_id])
-    @sneaker = Sneaker.find(params[:id])
+    @order = Order.find(params[:id])
+    # @sneaker = Sneaker.find(params[:sneaker_id])
   end
 
-  # private
-
-  # def order_params
-  #   params.require(:order).permit(:user_id)
+  # def confirm
+  #   @order = Order.new(order_params) # GET THE POST parameters
+  #   render :new if @order.invalid? # Return if false
   # end
+
+  private
+
+  def order_params
+    params.require(:order).permit(:user_id, :sneaker_id)
+  end
 end
