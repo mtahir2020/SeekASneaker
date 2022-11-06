@@ -1,7 +1,7 @@
 <div class="banner">
   <%# <div class="bottom-left"><span data-controller="typed-js"></span></div> %>
-  <div class="bottom-left">Buy & Sell Sneakers with a single click</div>
-  <div class="top-left">SeekASneaker</div>
+  <div class="bottom-left">The world's simplest sneaker marketplace</div>
+  <div class="top-left">Seek<span>A</span>Sneaker</div>
     <% if user_signed_in? %>
       <%= link_to "List sneakers", new_sneaker_path, class: "btn btn-danger", id: "banner-btn"%>
     <% end %>
@@ -9,42 +9,16 @@
 
 <div class="d-flex justify-content-center">
   <div class="w-75 d-flex align-items-center flex-column mt-4">
-    <% if user_signed_in? %>
-      <p class="mb-4">Welcome back <%= current_user.email %></p>
-    <% end %>
     <% if @search && @search.length == 1%>
-      <h3 class="mb-2 fs-1 heading-red"><b><%= @sneakers.length %> SNEAKER FOUND</b></h3>
+      <h3 class="my-4 fs-1 "><b><%= @sneakers.length %> SNEAKER FOUND</b></h3>
       <%= link_to "Refresh page", root_path, class: "mb-4" %>
-    <% elsif @search && @search.length >= 1 %>
-      <h3 class="mb-3 fs-1 heading-red"><b><%= @sneakers.length %> SNEAKERS FOUND</b></h3>
+    <% elsif @search && @search.length > 1 %>
+      <h3 class="my-4 fs-1 "><b><%= @sneakers.length %> SNEAKERS FOUND</b></h3>
       <%= link_to "Refresh page", root_path, class: "mb-4" %>
     <% else %>
-      <h3 class="mb-5 fs-1 heading-red"><b>LATEST SNEAKERS</b></h3>
+      <h3 class="my-4 fs-1"><b>LATEST SNEAKERS</b></h3>
     <% end %>
-    <div class="row">
-      <% @sneakers.each do |sneaker| %>
-        <% if sneaker.photo.attached? %>
-          <div class="col">
-            <div class="background-black d-flex flex-column justify-content-center sneakers-card">
-              <div class="d-flex justify-content-between align-items-center mb-2">
-                <div class="ms-2"><b><h5><%= sneaker.name.upcase %></h5></b></div>
-                <div class="me-2 mb-1">£<%= sneaker.price %></div>
-              </div>
-              <div class="img-container card-border justify-content-center d-flex">
-              <%= cl_image_tag(sneaker.photo.key,  crop: 'fit') %></div>
-              <div class="d-flex align-items-center justify-content-center py-4">
-                <div><%= link_to "See more", sneaker, class: "border btn btn-danger" %></div>
-              </div>
-            </div>
-          </div>
-        <% end %>
-      <% end %>
-    </div>
   </div>
 </div>
 
-
-
-
-<%# center cards in their container? %>
 <%# if/else for search results not working correctly %>
