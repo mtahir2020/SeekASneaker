@@ -1,7 +1,7 @@
 <div class="banner">
-  <%# <div class="bottom-left"><span data-controller="typed-js"></span></div> %>
-  <div class="bottom-left">Buy & Sell Sneakers with a single click</div>
-  <div class="top-left">SeekASneaker</div>
+  <div class="bottom-left"><span data-controller="typed-js"></span></div>
+  <%# <div class="bottom-left">Buy & Sell Sneakers with a single click</div> %>
+  <div class="top-left">Seek<span>A</span>Sneaker</div>
     <% if user_signed_in? %>
       <%= link_to "List sneakers", new_sneaker_path, class: "btn btn-danger", id: "banner-btn"%>
     <% end %>
@@ -9,13 +9,10 @@
 
 <div class="d-flex justify-content-center">
   <div class="w-75 d-flex align-items-center flex-column mt-4">
-    <% if user_signed_in? %>
-      <p class="mb-4">Welcome back <%= current_user.email %></p>
-    <% end %>
     <% if @search && @search.length == 1%>
       <h3 class="mb-2 fs-1 heading-red"><b><%= @sneakers.length %> SNEAKER FOUND</b></h3>
       <%= link_to "Refresh page", root_path, class: "mb-4" %>
-    <% elsif @search && @search.length >= 1 %>
+    <% elsif @search && @search.length > 1 %>
       <h3 class="mb-3 fs-1 heading-red"><b><%= @sneakers.length %> SNEAKERS FOUND</b></h3>
       <%= link_to "Refresh page", root_path, class: "mb-4" %>
     <% else %>

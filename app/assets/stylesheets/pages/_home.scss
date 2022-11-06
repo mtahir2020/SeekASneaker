@@ -1,4 +1,7 @@
 // Specific CSS for your home-page
 body {
     font-family: 'Montserrat';
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
