@@ -6,6 +6,7 @@
   height: 500px;
   position: relative;
   color: white;
+  border-radius: 5px;
 }
 
 .bottom-left {
@@ -23,11 +24,10 @@
   // -webkit-background-clip: text;
   // -webkit-text-fill-color: transparent;
   position: absolute;
-  top: 12px;
+  top: 0;
   left: 12px;
   font-size: 6rem;
   font-family: 'Rubik';
-
   text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
   font-weight: bold;
   color: rgba(188, 45, 59, 0.9);

@@ -15,9 +15,10 @@
   <body class="background-grey">
     <%# <p class="alert"><%= alert</p> %>
     <%# <p class="notice"><%= notice</p> %>
-    <%= render "shared/flashes" %>
     <%= render 'shared/navbar' %>
+    <%= render "shared/flashes" %>
     <%= yield %>
+    <%= render 'shared/grid' %>
     <%= render 'shared/footer' %>
   </body>
 </html>

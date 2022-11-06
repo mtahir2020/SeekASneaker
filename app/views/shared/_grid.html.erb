@@ -1,0 +1,21 @@
+<div class="d-flex flex-column align-items-center justify-content-center pt-2">
+  <div id="grid">
+    <% @sneakers.each do |sneaker| %>
+      <div class="grid-card">
+        <div style="width: 18rem;">
+          <div>
+          <%# if statement for cloudinary image tag %>
+            <% if sneaker.photo.attached? == true %>
+              <%= cl_image_tag sneaker.photo.key, :width=>400, :height=>350, :crop=>"fill", alt: sneaker.name %>
+            <% end %>
+          </div>
+
+          <div class="card-textbox">
+            <p class="card-text fs-5 pt-3 ps-2"><%= link_to sneaker.name.upcase, sneaker %></p>
+            <p class="card-text fs-5 pe-2">£<%= sneaker.price %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
