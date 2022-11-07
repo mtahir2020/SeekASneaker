@@ -1,11 +1,11 @@
 <%# diplaying out added sneakers %>
 
-<div class="d-flex">
+<div class="d-flex py-5 px-5 card-product">
 
-  <div class="card-product">
+  <div>
 
     <div>
-      <%= cl_image_tag @sneaker.photo.key, crop: "fit"  %>
+      <%= cl_image_tag @sneaker.photo.key, :width=>1000, :height=>800, crop: "fit"  %>
     </div>
 
 
@@ -16,20 +16,21 @@
 
   <div class="d-flex flex-column align-items-center">
     <div class="card-product-infos" >
-      <h2><strong><%= @sneaker.name.capitalize %></strong></h2>
+      <h2><%= @sneaker.name.upcase %></h2>
       <p><%= @sneaker.description.capitalize %></p>
-      <p>£ <%= @sneaker.price %></p>
+        <div class="price">
+          <p class="price"><strong>£ <%= @sneaker.price %></strong></p>
+        </div>
     </div>
 
     <div>
       <%= simple_form_for [@sneaker, @order] do |f| %>
-      <%= f.submit "Buy Now", class: "btn btn-primary", id: "buy-btn" %>
+      <%= f.submit "Buy Now", class: "button", id: "buy-btn" %>
       <% end %>
     </div>
-    <p class="mt-2"><%= link_to "Back", root_path %><p>
+    <p class="mt-2"><%= link_to "Back", root_path, class: "link-button" %><p>
   </div>
 
 
 
 </div>
-
