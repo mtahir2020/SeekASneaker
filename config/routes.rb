@@ -9,7 +9,12 @@ Rails.application.routes.draw do
 
   resources :orders, only: :show
 
-  devise_for :users
+  devise_for :users, :path => "accounts"
+
+  resources :users do
+    resources :reviews, only: [:index, :new, :create]
+  end
+
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

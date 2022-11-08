@@ -48,7 +48,7 @@ class SneakersController < ApplicationController
   def destroy
     @sneaker = Sneaker.find(params[:id])
     @sneaker.destroy
-    redirect_to root_path, notice: "Post was delrted"
+    redirect_to root_path, notice: "Post was deleted"
   end
 
   private
