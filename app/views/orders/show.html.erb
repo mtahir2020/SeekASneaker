@@ -11,7 +11,7 @@
 <div class="card-product">
   <div class='px-5 py-5'>
     <%= @sneaker.photos.each do |photo| %>
-    <%= cl_image_tag photo.key, :width=>1000, :height=>800, crop: "fit"  %>
+    <%= cl_image_tag photos.key, :width=>1000, :height=>800, crop: "fit"  %>
     <%= end %>
   </div>
   <div class="card-product-infos">
