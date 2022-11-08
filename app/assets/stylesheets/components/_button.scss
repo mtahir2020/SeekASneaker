@@ -11,7 +11,7 @@
 }
 
 .button {
-  background-color: #8af18d; /* Green */
+  background-color: #c74e4e;; /* Green */
   border: none;
   color: white;
   padding: 15px 32px;
@@ -30,4 +30,8 @@
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+}
+
+.link-button:hover {
+  color: #c74e4e;
 }

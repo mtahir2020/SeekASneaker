@@ -4,10 +4,25 @@
 
 .background-grey {
   background: rgb(233,229,229);
-
 }
 
 .background-black {
   background-color: rgb(73, 71, 71);
   color: white;
+}
+
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+#content-wrap {
+  padding-bottom: 100px;    /* Footer height */
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px;            /* Footer height */
 }

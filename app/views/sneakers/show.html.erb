@@ -1,18 +1,9 @@
 <%# diplaying out added sneakers %>
 
 <div class="d-flex py-5 px-5 card-product">
-
   <div>
-
-    <div>
-      <%= cl_image_tag @sneaker.photo.key, :width=>1000, :height=>800, crop: "fit"  %>
-    </div>
-
-
-
+    <%= cl_image_tag @sneaker.photo.key, :width=>1000, :height=>800, crop: "fit"  %>
   </div>
-
-
 
   <div class="d-flex flex-column align-items-center">
     <div class="card-product-infos" >
