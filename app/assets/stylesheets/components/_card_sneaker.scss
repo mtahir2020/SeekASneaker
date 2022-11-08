@@ -3,7 +3,7 @@ p {
 }
 .card-product {
   overflow: hidden;
-  height: 350px;
+  height: 400px;
   width: 1000px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
@@ -12,7 +12,7 @@ p {
   margin: auto;
   margin-top: 50px;
   margin-bottom: 50px;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .order {
@@ -30,8 +30,8 @@ p {
 }
 
 .card-product img {
-  height: 100%;
-  width: 250px;
+  // height: 100%;
+  // width: 250px;
   object-fit: cover;
 }
 
