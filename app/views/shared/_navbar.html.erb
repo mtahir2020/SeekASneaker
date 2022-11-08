@@ -46,7 +46,7 @@
 
 <div class="d-flex justify-content-center align-items-center pt-4 pb-3 bg-white">
   <% if user_signed_in? %>
-    <h4>Welcome back <%= current_user.email %>. <span data-controller="typed-js"></span></h4>
+    <h4>Welcome back <%= current_user.username %>. <span data-controller="typed-js"></span></h4>
   <% else %>
     <h4><span data-controller="typed-js"></span></h4>
   <% end %>
