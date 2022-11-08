@@ -1,5 +1,5 @@
 class SneakersController < ApplicationController
-  before_action :authenticate_user!
+  skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_sneaker, only: %i[ show  update destroy ]
 
 
