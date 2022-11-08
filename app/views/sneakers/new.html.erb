@@ -1,7 +1,9 @@
 <div class="container">
-  <h1>Create a sneaker</h1>
 
+  <h1 class="py-3 px-5 create">Create a sneaker</h1>
+  <div class="link-form">
   <%= render 'form' %>
-  <%= link_to 'Show', @sneaker %> |
-  <%= link_to 'Back', sneakers_path %>
+  <%= link_to 'Show', @sneaker, class: "link-button" %>
+  <%= link_to 'Back', sneakers_path, class: "link-button" %>
+  </div>
 </div>
