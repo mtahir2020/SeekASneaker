@@ -4,11 +4,8 @@
   <h2 class='mb-5'><%= current_user.email %></strong></h2>
   <div class='border-strong'>
     <p class='line'>Order details:</p>
-    <br>
     <p class='mb-3 line'><%= @order.sneaker.name %></p>
-    <br>
     <p class='line'><%= @order.created_at %></p>
-    <br>
     <p class='line'><strong>Total: £ <%= @order.sneaker.price %></strong></p>
   </div>
 </div>

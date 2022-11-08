@@ -1,7 +1,9 @@
-<%= simple_form_for(@sneaker) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :price %>
-  <%= f.input :description %>
-  <%= f.input :photo, as: :file %>
-  <%= f.submit %>
-<% end %>
+<div class="form">
+  <%= simple_form_for(@sneaker) do |f| %>
+    <h6 class="form-input"><%= f.input :name %></h6>
+    <h6 class="form-input"><%= f.input :price %></h6>
+    <h6 class="form-input"><%= f.input :description %></h6>
+    <h6 class="form-input"><%= f.input :photo, as: :file %></h6>
+    <button class="button-sneaker">Create a sneaker<% f.submit %></button>
+  <% end %>
+</div>
