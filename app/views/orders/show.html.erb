@@ -1,11 +1,22 @@
-<div class='d-flex align-items-center justify-content-center flex-column'>
-  <div class='flex border justify-content-center mt-3'><h1>Orders page!</h1></div>
-  <h2>Registered e-mail: <strong></h2>
-  <h2 class='mb-5'><%= current_user.email %></strong></h2>
-  <div class='border-strong'>
-    <p class='line'>Order details:</p>
+<div class="card-two">
+<div class="order">
+  <div class="card-product-infos">
+    <h2>Orders page!</h2>
+    <h2>Registered e-mail:</h2>
+    <p class='line'><strong><%= current_user.email %></strong></p>
+  </div>
+</div>
+
+
+<div class="card-product">
+  <div class='px-5 py-5'>
+    <%= cl_image_tag @order.sneaker.photo.key, :width=>1000, :height=>800, crop: "fit"  %>
+  </div>
+  <div class="card-product-infos">
+    <h2>Order details:</h2>
     <p class='mb-3 line'><%= @order.sneaker.name %></p>
-    <p class='line'><%= @order.created_at %></p>
+    <p class='line'><%= @order.created_at.strftime("%d-%m-%Y") %></p>
     <p class='line'><strong>Total: £ <%= @order.sneaker.price %></strong></p>
   </div>
+</div>
 </div>
