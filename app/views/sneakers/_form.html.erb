@@ -3,7 +3,7 @@
     <h6 class="form-input"><%= f.input :name %></h6>
     <h6 class="form-input"><%= f.input :price %></h6>
     <h6 class="form-input"><%= f.input :description %></h6>
-    <h6 class="form-input"><%= f.input :photo, as: :file %></h6>
+    <h6 class="form-input"><%= f.input :photos, as: :file, input_html: { multiple: true }  %></h6>
     <button class="button-sneaker">Create a sneaker<% f.submit %></button>
   <% end %>
 </div>

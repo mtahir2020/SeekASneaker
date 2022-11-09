@@ -1,12 +1,14 @@
 <div class="d-flex flex-column align-items-center justify-content-center pt-2">
   <div id="grid">
-    <% @sneakers.each do |sneaker| %>
+  <% @sneakers.each do |sneaker| %>
       <div class="grid-card">
         <div style="width: 18rem;">
           <div>
-          <%# if statement for cloudinary image tag %>
-            <% if sneaker.photo.attached? == true %>
-              <%= cl_image_tag sneaker.photo.key, :width=>400, :height=>350, :crop=>"fill", alt: sneaker.name %>
+            <%# first photo code %>
+            <% sneaker.photos.each_with_index do |photo, index| %>
+              <% if index == 0 %>
+                <%= cl_image_tag photo.key, height: 350, width: 400, crop: :fill, alt: sneaker.name %>
+              <% end %>
             <% end %>
           </div>
 
@@ -17,5 +19,6 @@
         </div>
       </div>
     <% end %>
+
   </div>
 </div>

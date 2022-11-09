@@ -27,4 +27,9 @@ class PagesController < ApplicationController
   #   params.require(:sneaker).permit(:user_id, :name, :price, :description. :image_url)
   # end
 
+
+  def myorders
+    current_user.present? || @sneakers = db.execute(("SELECT * user_id FROM sneakers"))
+  end
+
 end
