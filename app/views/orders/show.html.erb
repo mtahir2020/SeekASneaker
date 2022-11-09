@@ -1,24 +1,25 @@
 <div class="card-two">
-<div class="order">
-  <div class="card-product-infos">
-    <h2>Orders page!</h2>
-    <h2>Registered e-mail:</h2>
-    <p class='line'><strong><%= current_user.email %></strong></p>
+  <div class="order">
+    <div class="card-product-infos">
+      <h2>Orders page!</h2>
+      <h2>Registered e-mail:</h2>
+      <p class='line'><strong><%= current_user.email %></strong></p>
+    </div>
   </div>
-</div>
 
-
-<div class="card-product">
-  <div class='px-5 py-5'>
-    <%= @sneaker.photos.each do |photo| %>
-    <%= cl_image_tag photos.key, :width=>1000, :height=>800, crop: "fit"  %>
-    <%= end %>
+  <div class="card-product">
+    <div class='px-5 py-5'>
+      <% @sneaker.photos.each_with_index do |photo, index| %>
+        <% if index == 0 %>
+          <%= cl_image_tag photo.key, height: 1000, width: 800, crop: :fill, alt: sneaker.name %>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="card-product-infos">
+      <h2>Order details:</h2>
+      <p class='mb-3 line'><%= @order.sneaker.name %></p>
+      <p class='line'><%= @order.created_at.strftime("%d-%m-%Y") %></p>
+      <p class='line'><strong>Total: £ <%= @order.sneaker.price %></strong></p>
+    </div>
   </div>
-  <div class="card-product-infos">
-    <h2>Order details:</h2>
-    <p class='mb-3 line'><%= @order.sneaker.name %></p>
-    <p class='line'><%= @order.created_at.strftime("%d-%m-%Y") %></p>
-    <p class='line'><strong>Total: £ <%= @order.sneaker.price %></strong></p>
-  </div>
-</div>
 </div>

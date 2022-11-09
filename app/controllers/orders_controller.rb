@@ -7,16 +7,14 @@ class OrdersController < ApplicationController
 
   def new
     @order = Order.new
-    @sneaker = Sneaker.find(params[:id])
+    @sneaker = Sneaker.find(params[:sneaker_id])
   end
 
   def create
-    @order = Order.new
+    @order = Order.new(order_params)
     @sneaker = Sneaker.find(params[:sneaker_id])
     @order.sneaker = @sneaker
     @order.user = current_user
-    @order.save
-
     if @order.save
       redirect_to order_path(@order)
     end
