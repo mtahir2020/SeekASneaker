@@ -4,9 +4,11 @@
       <div class="grid-card">
         <div style="width: 18rem;">
           <div>
-          <%# if statement for cloudinary image tag %>
-            <% if sneaker.photo.attached? == true %>
-              <%= cl_image_tag sneaker.photo.key, :width=>400, :height=>350, :crop=>"fill", alt: sneaker.name %>
+          <%# statement to access mutliple %>
+            <% sneaker.photos.each_with_index do |photo, index| %>
+              <% if index == 0 %>
+                <%= cl_image_tag photo.key, height: 350, width: 400, crop: :fill, alt: sneaker.name %>
+              <% end %>
             <% end %>
           </div>
 

@@ -2,7 +2,6 @@ class SneakersController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_sneaker, only: %i[ show  update destroy ]
 
-
   def index
     if params[:search]
       @search = params[:search]
@@ -20,12 +19,9 @@ class SneakersController < ApplicationController
     # end
   end
 
-
   def new
     @sneaker = Sneaker.new
   end
-
-
 
   def create
     @sneaker = Sneaker.new(sneaker_params)
@@ -58,6 +54,6 @@ class SneakersController < ApplicationController
   end
 
   def sneaker_params
-    params.require(:sneaker).permit(:name, :price, :description, :photo)
+    params.require(:sneaker).permit(:name, :price, :description, photos: [])
   end
 end

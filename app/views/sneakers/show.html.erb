@@ -2,7 +2,11 @@
 
 <div class="d-flex py-5 px-5 card-product">
   <div>
-    <%= cl_image_tag @sneaker.photo.key, :width=>1000, :height=>800, crop: "fit"  %>
+    <% @sneaker.photos.each_with_index do |photo, index| %>
+      <% if index == 0 %>
+        <%= cl_image_tag photo.key, height: 350, width: 400, crop: :fill, alt: @sneaker.name %>
+      <% end %>
+    <% end %>
   </div>
 
   <div class="d-flex flex-column align-items-center">

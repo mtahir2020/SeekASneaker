@@ -10,7 +10,11 @@
 
 <div class="card-product">
   <div class='px-5 py-5'>
-    <%= cl_image_tag @order.sneaker.photo.key, :width=>1000, :height=>800, crop: "fit"  %>
+    <% @order.sneaker.photos.each_with_index do |photo, index| %>
+      <% if index == 0 %>
+        <%= cl_image_tag photo.key, height: 350, width: 400, crop: :fill, alt: @order.sneaker.name %>
+      <% end %>
+    <% end %>
   </div>
   <div class="card-product-infos">
     <h2>Order details:</h2>
