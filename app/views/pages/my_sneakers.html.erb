@@ -1,26 +1,26 @@
 <div class="d-flex flex-column align-items-center justify-content-center pt-2">
+   <h3>My listed sneakers</h3>
   <div id="grid">
-  <% @sneakers.each do |sneaker| %>
+    <% @sneakers.each do |sneaker| %>
       <div class="grid-card">
         <div style="width: 18rem;">
           <div>
-            <% sneaker.photos.each_with_index do |photo, index| %>
-              <% if index == 0 %>
-                <%= cl_image_tag photo.key, height: 350, width: 400, crop: :fill, alt: sneaker.name %>
+          <%# if statement for cloudinary image tag %>
+
+             <% sneaker.photos.each_with_index do |photo, index| %>
+                <% if index == 0 %>
+                  <%= cl_image_tag photo.key, height: 350, width: 400, crop: :fill, alt: sneaker.name %>
+                <% end %>
               <% end %>
-            <% end %>
           </div>
 
+          <%= sneaker.description %>
           <div class="card-textbox">
             <p class="card-text fs-5 pt-3 ps-2"><%= link_to sneaker.name.upcase, sneaker %></p>
             <p class="card-text fs-5 pe-2">£<%= sneaker.price %></p>
-          <div>
-            <p><%= link_to sneaker.user.username, user_reviews_path(sneaker.user) %></p>
-          </div>
           </div>
         </div>
       </div>
     <% end %>
-
   </div>
 </div>

@@ -15,3 +15,52 @@
 .card-border {
   border: 1px solid black;
 }
+
+.card-order {
+  width: 300px;
+  border: 2px;
+  border-radius: 0px;
+  margin: 8px;
+  box-shadow: 0 4px 8px 0 lightgray, 0 6px 12px 0 lightgray;
+}
+
+.card-order-image {
+  width: 100%;
+  // height: 350px;
+  // height: 200px;
+  overflow: hidden;
+}
+
+.order-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.order-id {
+  text-align: center;
+  font-size: medium;
+  color: darkgray;
+  text-decoration-line: underline;
+  margin-top: 0.5cm;
+}
+
+.details-order {
+
+}
+
+h3.text-order {
+  text-align: center;
+}
+
+.order-spacing {
+  text-indent: 50px;
+  margin-bottom: 15px;
+  padding: 0;
+}
+
+.text-order {
+  text-align: center;
+  margin-top: 0.75cm;
+  margin-bottom: 0.75cm;
+}

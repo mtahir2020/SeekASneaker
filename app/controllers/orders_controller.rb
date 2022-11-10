@@ -3,6 +3,10 @@ require 'pry'
 class OrdersController < ApplicationController
   before_action :authenticate_user!
 
+  def index
+    @orders = Order.where(:user_id == current_user.id)
+  end
+
 
   def new
     @order = Order.new
@@ -14,8 +18,6 @@ class OrdersController < ApplicationController
     @sneaker = Sneaker.find(params[:sneaker_id])
     @order.sneaker = @sneaker
     @order.user = current_user
-    @order.save
-
     if @order.save
       redirect_to order_path(@order)
     end

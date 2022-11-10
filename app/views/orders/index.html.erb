@@ -1,0 +1,21 @@
+<div class="text-order"><h1>YOUR PAST ORDERS!</h1></div>
+<div class="order-container">
+  <div class="d-flex">
+    <% @orders.each do |order| %>
+      <div class="card-order">
+      <% order.sneaker.photos.each_with_index do |photo, index| %>
+      <% if index == 0 %>
+        <%= cl_image_tag photo.key, height: 350, width: 300, crop: :fill, alt: order.sneaker.name %>
+      <% end %>
+    <% end %>
+        <div>
+          <h1 class="order-id">Order no.  <%= order.id %></h1>
+          <h3 class="text-order"><%= order.sneaker.name.capitalize %></h3>
+          <p class="order-spacing">£<%= order.sneaker.price %></p>
+          <p class="order-spacing">Listed by: <%= order.sneaker.user_id %></p>
+          <p class="order-spacing">order created at: <%= order.sneaker.created_at.strftime("%d-%m-%Y") %></p>
+        </div>
+    </div>
+    <% end %>
+  </div>
+</div>

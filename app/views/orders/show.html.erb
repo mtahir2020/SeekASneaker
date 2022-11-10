@@ -1,12 +1,19 @@
 <div class="card-two">
-<div class="order">
-  <div class="card-product-infos">
-    <h2>Orders page!</h2>
-    <h2>Registered e-mail:</h2>
-    <p class='line'><strong><%= current_user.email %></strong></p>
+  <div class="order">
+    <div class="card-product-infos">
+      <h2>Orders page!</h2>
+      <h2>Registered e-mail:</h2>
+      <p class='line'><strong><%= current_user.email %></strong></p>
+    </div>
   </div>
-</div>
 
+  <div class="card-product">
+    <div class='px-5 py-5'>
+    <% @order.sneaker.photos.each_with_index do |photo, index|%>
+      <% if index == 0 %>
+        <%= cl_image_tag photo.key, height: 800, width: 600, crop: :fit, alt: @order.sneaker.name %>
+      <% end %>
+    <% end %>
 
 <div class="card-product">
   <div class='px-5 py-5'>
@@ -35,3 +42,4 @@
     <%= f.submit %>
   <% end %>
 </div>
+
