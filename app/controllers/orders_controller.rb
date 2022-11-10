@@ -1,3 +1,5 @@
+require "time"
+
 class OrdersController < ApplicationController
   before_action :authenticate_user!
 
@@ -11,7 +13,7 @@ class OrdersController < ApplicationController
   end
 
   def create
-    @order = Order.new
+    @order = Order.new(order_params)
     @sneaker = Sneaker.find(params[:sneaker_id])
     @order.sneaker = @sneaker
     @order.user = current_user
@@ -19,12 +21,14 @@ class OrdersController < ApplicationController
 
     if @order.save
       redirect_to order_path(@order)
+    else
+      render :new
     end
   end
 
   def show
     @order = Order.find(params[:id])
-    # @sneaker = Sneaker.find(params[:sneaker_id])
+    @sneaker = Sneaker.find(params[:sneaker_id])
   end
 
   # def confirm
