@@ -1,6 +1,6 @@
 class SneakersController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
-  before_action :set_sneaker, only: %i[ show  update destroy ]
+  before_action :set_sneaker, only: %i[show update destroy edit]
 
 
   def index
@@ -33,6 +33,9 @@ class SneakersController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def edit
   end
 
   def update
