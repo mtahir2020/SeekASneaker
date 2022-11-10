@@ -15,12 +15,31 @@
       <% end %>
     <% end %>
 
-    </div>
-    <div class="card-product-infos">
-      <h2>Order details:</h2>
-      <p class='mb-3 line'><%= @order.sneaker.name %></p>
-      <p class='line'><%= @order.created_at.strftime("%d-%m-%Y") %></p>
-      <p class='line'><strong>Total: £ <%= @order.sneaker.price %></strong></p>
-    </div>
+<div class="card-product">
+  <div class='px-5 py-5'>
+    <% @order.sneaker.photos.each_with_index do |photo, index| %>
+      <% if index == 0 %>
+        <%= cl_image_tag photo.key, height: 350, width: 400, crop: :fill, alt: @order.sneaker.name %>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="card-product-infos">
+    <h2>Order details:</h2>
+    <p class='mb-3 line'><%= @order.sneaker.name %></p>
+    <p class='line'><%= @order.created_at.strftime("%d-%m-%Y") %></p>
+    <p class='line'><strong>Total: £ <%= @order.sneaker.price %></strong></p>
   </div>
 </div>
+</div>
+
+<%= @order.user.email %>
+<h3>Leave a Review for this seller</h3>
+
+<div>
+  <%= simple_form_for [@user, @review] do |f| %>
+    <%= f.input :rating, collection: (1..5).to_a, label: "Rate this user" %>
+    <%= f.input :content %>
+    <%= f.submit %>
+  <% end %>
+</div>
+

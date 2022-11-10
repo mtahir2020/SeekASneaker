@@ -1,9 +1,12 @@
+require 'pry'
+
 class OrdersController < ApplicationController
   before_action :authenticate_user!
 
   def index
     @orders = Order.where(:user_id == current_user.id)
   end
+
 
   def new
     @order = Order.new
@@ -21,8 +24,11 @@ class OrdersController < ApplicationController
   end
 
   def show
+    # variable (boolean) to say if there is already a review that has user_id and user name
     @order = Order.find(params[:id])
-    # @sneaker = Sneaker.find(params[:sneaker_id])
+    @review = Review.new
+    # need the USER
+    @user = User.find(@order.sneaker.user_id)
   end
 
   # def confirm

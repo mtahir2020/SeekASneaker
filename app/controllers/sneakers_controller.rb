@@ -2,7 +2,6 @@ class SneakersController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_sneaker, only: %i[ show  update destroy ]
 
-
   def index
     if params[:search]
       @search = params[:search]
@@ -19,7 +18,6 @@ class SneakersController < ApplicationController
     #   redirect_to sneaker(@sneaker)
     # end
   end
-
 
   def new
     @sneaker = Sneaker.new
@@ -46,7 +44,7 @@ class SneakersController < ApplicationController
   def destroy
     @sneaker = Sneaker.find(params[:id])
     @sneaker.destroy
-    redirect_to root_path, notice: "Post was delrted"
+    redirect_to root_path, notice: "Post was deleted"
   end
 
   private
