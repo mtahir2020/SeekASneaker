@@ -25,8 +25,6 @@ class SneakersController < ApplicationController
     @sneaker = Sneaker.new
   end
 
-
-
   def create
     @sneaker = Sneaker.new(sneaker_params)
     @sneaker.user = current_user

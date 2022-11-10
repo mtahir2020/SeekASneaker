@@ -15,8 +15,6 @@ class OrdersController < ApplicationController
     @sneaker = Sneaker.find(params[:sneaker_id])
     @order.sneaker = @sneaker
     @order.user = current_user
-    @order.save
-
     if @order.save
       redirect_to order_path(@order)
     end
