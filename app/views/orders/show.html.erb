@@ -24,3 +24,14 @@
   </div>
 </div>
 </div>
+
+<%= @order.user.email %>
+<h3>Leave a Review for this seller</h3>
+
+<div>
+  <%= simple_form_for [@user, @review] do |f| %>
+    <%= f.input :rating, collection: (1..5).to_a, label: "Rate this user" %>
+    <%= f.input :content %>
+    <%= f.submit %>
+  <% end %>
+</div>

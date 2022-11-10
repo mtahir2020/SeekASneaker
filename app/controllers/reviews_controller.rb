@@ -2,6 +2,7 @@ class ReviewsController < ApplicationController
   def index
     # @reviews = Review.all
     @reviews = Review.where(:user_id == current_user)
+    
   end
 
   def new
@@ -13,7 +14,9 @@ class ReviewsController < ApplicationController
     @user = User.find(params[:user_id])
     @review = Review.new(review_params)
     @review.user = @user
-    @review.save
+    if @review.save
+      redirect_to user_reviews_path(@user)
+    end
   end
 
   private

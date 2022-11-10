@@ -20,7 +20,9 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
-    # @sneaker = Sneaker.find(params[:sneaker_id])
+    @review = Review.new
+    # need the USER
+    @user = @order.user
   end
 
   # def confirm
