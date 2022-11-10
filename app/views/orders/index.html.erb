@@ -1,9 +1,12 @@
 <div class="order-container">
   <div class="d-flex">
     <% @orders.each do |order| %>
-    <div class="card-order">
-        <%= cl_image_tag order.sneaker.photo.key, class: "card-order-image", crop: "fill" %>
-
+      <div class="card-order">
+      <% order.sneaker.photos.each_with_index do |photo, index| %>
+      <% if index == 0 %>
+        <%= cl_image_tag photo.key, height: 350, width: 400, crop: :fill, alt: order.sneaker.name %>
+      <% end %>
+    <% end %>
         <div>
           <p></p>
           <h1 class="order-id">Order no.  <%= order.id %></h1>
@@ -12,7 +15,6 @@
           <p class="order-spacing">Listed by: <%= order.sneaker.user_id %></p>
           <p class="order-spacing">order created at: <%= order.sneaker.created_at.strftime("%d-%m-%Y") %></p>
         </div>
-
     </div>
     <% end %>
   </div>
