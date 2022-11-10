@@ -9,7 +9,9 @@
         <p>Date: <%= review.created_at.strftime("%d-%m-%Y") %></p>
         <p>Trainers: </p>
         <%# <%= review.user.orders %> %>
-        <p>Reviewer: <%= review.user.username %></p>
+
+        <p>Seller: <%= review.user.username %></p>
+        <p>Reviewer: <%= review.reviewer %></p>
       </div>
     <% end %>
   <% else %>
@@ -17,6 +19,7 @@
   <% end %>
 <div>
 
+<%# <%= @order.sneaker %> %>
 
-<%# Review belongs to an order THROUGH user %>
-<%# has_one :review, through: :user added to order controller %>
+<%# Review belongs to an order THROUGH user ???????????%>
+<%# order has_one :review, through: :user added to order model %>

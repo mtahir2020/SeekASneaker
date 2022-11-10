@@ -1,8 +1,9 @@
 class ReviewsController < ApplicationController
   def index
     # @reviews = Review.all
-    @reviews = Review.where(:user_id == current_user)
-    
+    # we want to get the order in here, so we can get the user associated with it
+    @reviews = Review.where(user_id: params[:user_id])
+    # this is not right - is displaying for every single user
   end
 
   def new
@@ -10,10 +11,12 @@ class ReviewsController < ApplicationController
     @review = Review.new
   end
 
+
   def create
     @user = User.find(params[:user_id])
     @review = Review.new(review_params)
     @review.user = @user
+    @review.reviewer = current_user.username
     if @review.save
       redirect_to user_reviews_path(@user)
     end
