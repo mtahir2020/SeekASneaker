@@ -1,5 +1,7 @@
 p {
-  padding-top: 20px;
+  padding-top: 5px;
+  padding-bottom: 0px;
+
 }
 .card-product {
   overflow: hidden;
@@ -12,7 +14,7 @@ p {
   margin: auto;
   margin-top: 50px;
   margin-bottom: 50px;
-  justify-content: space-between;
+  // justify-content: space-between;
 }
 
 .order {
@@ -53,10 +55,19 @@ p {
 .card-product .card-product-infos {
   padding: 50px;
   text-align: center;
-  padding-right: 100px;
+  // padding-right: 50px;
+  // padding-left: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: right;
+  margin-left: 50px;
 }
 
 .order .card-product-infos {
   padding: 25px;
   text-align: center;
+}
+
+.price {
+  margin-bottom: 10px;
 }
