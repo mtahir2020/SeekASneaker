@@ -11,7 +11,7 @@
     <div class='px-5 py-5'>
     <% @order.sneaker.photos.each_with_index do |photo, index|%>
       <% if index == 0 %>
-        <%= cl_image_tag photo.key, height: 1000, width: 800, crop: :fill, alt: @order.sneaker.name %>
+        <%= cl_image_tag photo.key, height: 800, width: 600, crop: :fit, alt: @order.sneaker.name %>
       <% end %>
     <% end %>
 
