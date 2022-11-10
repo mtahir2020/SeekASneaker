@@ -33,6 +33,7 @@ p {
   // height: 100%;
   // width: 250px;
   object-fit: cover;
+  margin-bottom: 150px;
 }
 
 .card-product h2 {
@@ -50,8 +51,9 @@ p {
 }
 
 .card-product .card-product-infos {
-  padding: 15px;
+  padding: 50px;
   text-align: center;
+  padding-right: 100px;
 }
 
 .order .card-product-infos {
