@@ -12,8 +12,6 @@
     <% @order.sneaker.photos.each_with_index do |photo, index|%>
       <% if index == 0 %>
         <%= cl_image_tag photo.key, height: 800, width: 600, crop: :fit, alt: @order.sneaker.name %>
-      <% end %>
-    <% end %>
 
     </div>
     <div class="card-product-infos">
@@ -22,5 +20,7 @@
       <p class='line'><%= @order.created_at.strftime("%d-%m-%Y") %></p>
       <p class='line'><strong>Total: £ <%= @order.sneaker.price %></strong></p>
     </div>
+      <% end %>
+    <% end %>
   </div>
 </div>
