@@ -1,25 +1,26 @@
 <div>
+  <div class="text-center py-4">
+    <h1>Reviews for <%= @user.username.upcase %></h1>
+  </div>
   <% if @reviews.any? == true %>
     <% @reviews.each do |review| %>
-      <div class="text-center">
-        <h1>Reviews for <%= review.user.username %></h1>
-      </div>
-      <div id="review-card">
-        <div class="pt-2 border-bottom border-3 d-flex align-items-center justify-content-between bg-light">
-          <h4 class="ps-2"><b>Rating:</b> <%= review.rating %></h4>
-          <p class="pe-2"><%= review.created_at.strftime("%d-%m-%Y") %></p>
-        </div>
-        <div class="d-flex align-items-center justify-content-start">
-          <i class="fa-solid fa-quote-left fa-xl mb-4 ps-2"></i>
-          <p class="p-2"><%= review.content %></p>
-        </div>
-        <div>
-          <p><small>User: <%= review.reviewer %></small></p>
+      <div class="d-flex justify-content-center">
+        <div id="review-card">
+          <div class="pt-2 border-bottom border-3 d-flex align-items-center justify-content-between bg-light">
+            <h4 class="ps-2"><b>Rating:</b> <%= review.rating %></h4>
+            <p class="pe-2"><%= review.created_at.strftime("%d-%m-%Y") %></p>
+          </div>
+          <div class="d-flex align-items-center justify-content-start">
+            <i class="fa-solid fa-quote-left fa-xl pb-4 ps-2"></i>
+            <p class="ps-2 fs-5"><%= review.content %></p>
+          </div>
+          <div>
+            <p><small>Reviewed by: <%= review.reviewer %></small></p>
+          </div>
         </div>
       </div>
     <% end %>
   <% else %>
-  <h1><%= review.user.username %> profile page</h1>
     <p class="p-2 text-black"> This user has no reviews yet!</p>
   <% end %>
 <div>
