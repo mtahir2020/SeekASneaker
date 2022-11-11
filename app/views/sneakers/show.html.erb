@@ -1,39 +1,34 @@
-<div class="d-flex py-5 px-5 card-product">
-  <div>
-    <%# <%= cl_image_tag @sneaker.photos.first.key, :width=>350, :height=>350, crop: "fit"  %> %>
+<div class="card-product">
     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
         <% @sneaker.photos.each_with_index do |photo,index| %>
           <div class="carousel-item <%="active" if index.zero? %>">
-            <img src="<%= cl_image_path photo.key %>" class="d-block w-100" alt="<%=@sneaker.name%>">
+            <img src="<%= cl_image_path photo.key, height: 800, width: 800, crop: :fit %>" alt="<%=@sneaker.name%>">
           </div>
           <% end %>
       </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
     </div>
-  </div>
 
-  <div class="d-flex flex-column align-items-center-right">
-    <div class="card-product-infos" >
-      <h5>Seller: <%= @seller.username %></h2>
-      <h2><%= @sneaker.name.upcase %></h2>
-      <p><%= @sneaker.description.capitalize %></p>
-        <div class="price">
-          <p class="price"><strong>£ <%= @sneaker.price %></strong></p>
-        </div>
-        <div>
-          <%= simple_form_for [@sneaker, @order] do |f| %>
-            <%= f.submit "Buy Now", class: "button", id: "buy-btn" %>
-          <% end %>
-        </div>
-        <p class="mt-2"><%= link_to "Back", root_path, class: "link-button" %></p>
-    </div>
+
+  <div id="order-container">
+      <small id="seller">Seller: <%= link_to @seller.username, user_reviews_path(@seller), id: "seller-hyperlink" %></small>
+      <div class="sneaker-details">
+        <h2><%= @sneaker.name.upcase %></h2>
+        <p><%= @sneaker.description.capitalize %></p>
+        <p><strong>£ <%= @sneaker.price %></strong></p>
+      </div>
+      <div>
+        <%= simple_form_for [@sneaker, @order] do |f| %>
+          <%= f.submit "Buy Now", class: "button", id: "buy-btn" %>
+        <% end %>
+      <p class="mt-2"><%= link_to "Back", root_path, class: "button", id: 'back-btn' %></p>
+      </div>
   </div>
- </div>

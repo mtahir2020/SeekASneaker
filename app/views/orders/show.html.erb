@@ -1,34 +1,59 @@
-<div class="card-two">
-  <div class="order">
-    <div class="card-product-infos">
-      <h2>Orders page!</h2>
+
+  <div class="order pt-4">
+    <div class="card-product-infos-top">
+      <h2>Your order is confirmed!</h2>
       <h2>Registered e-mail:</h2>
       <p class='line'><strong><%= current_user.email %></strong></p>
     </div>
   </div>
 
-  <div class="card-product">
-      <% @order.sneaker.photos.each_with_index do |photo, index|%>
-        <% if index == 0 %>
-          <%= cl_image_tag photo.key, height: 800, width: 600, crop: :fit, alt: @order.sneaker.name %>
-        <% end %>
-      <% end %>
+  <%# <div class="card-product"> %>
+      <%# <% @order.sneaker.photos.each_with_index do |photo, index|%>
+        <%# <% if index == 0 %>
+          <%# <%= cl_image_tag photo.key, height: 800, width: 600, crop: :fit, alt: @order.sneaker.name %>
+        <%# <% end %>
+      <%# <% end %>
 
-      <div class="card-product-infos">
+      <%# <div class="card-product-infos"> %>
+        <%# <h2>Order details:</h2> %>
+        <%# <p class='mb-3 line'><%= @order.sneaker.name %></p>
+        <%# <p class='line'><%= @order.created_at.strftime("%d-%m-%Y") %>
+        <%# <p class='line'><strong>Total: £ <%= @order.sneaker.price %>
+      <%# </div> %>
+    <%# </div> %>
+  <%# </div> %>
+
+
+<%# new div %>
+  <div class="card-product">
+        <% @order.sneaker.photos.each_with_index do |photo,index| %>
+          <% if index == 0 %>
+            <%= cl_image_tag photo.key, height: 800, width: 600, crop: :fit, alt:@order.sneaker.name%>
+          <% end %>
+        <% end %>
+    <div id="order-confirmed-container">
+      <%# <small id="seller">Seller: <%= link_to @seller.username, user_reviews_path(@seller), id: "seller-hyperlink" %></small>
+      <div class="sneaker-confirmed-details">
         <h2>Order details:</h2>
         <p class='mb-3 line'><%= @order.sneaker.name %></p>
         <p class='line'><%= @order.created_at.strftime("%d-%m-%Y") %></p>
         <p class='line'><strong>Total: £ <%= @order.sneaker.price %></strong></p>
       </div>
+  </div>
+          </div>
+
+
+
+<%# end of div %>
+<div class="d-flex justify-content-center">
+  <div id="review-form">
+    <h3>Leave a Review for this seller</h3>
+    <div>
+      <%= simple_form_for [@user, @review] do |f| %>
+        <%= f.input :rating, collection: (1..5).to_a, label: "Rate this user", input_html: {data: {controller: "star-rating"}} %>
+        <%= f.input :content %>
+        <%= f.submit "Submit Review", class: "button", id: "buy-btn" %>
+      <% end %>
     </div>
   </div>
-
-<h3>Leave a Review for this seller</h3>
-
-<div>
-  <%= simple_form_for [@user, @review] do |f| %>
-    <%= f.input :rating, collection: (1..5).to_a, label: "Rate this user", input_html: {data: {controller: "star-rating"}} %>
-    <%= f.input :content %>
-    <%= f.submit %>
-  <% end %>
 </div>

@@ -1,28 +1,63 @@
-<div>
-  <div class="text-center py-4">
-    <h1>Reviews for <%= @user.username.upcase %></h1>
-  </div>
-  <% if @reviews.any? == true %>
-    <% @reviews.each do |review| %>
-      <div class="d-flex justify-content-center">
-        <div id="review-card">
-          <div class="pt-2 border-bottom border-3 d-flex align-items-center justify-content-between bg-light">
-            <h4 class="ps-2"><b>Rating: </b><%= review.rating %></h4>
-            <p class="pe-2"><%= review.created_at.strftime("%d-%m-%Y") %></p>
-          </div>
-          <div id="review-body" class="d-flex align-items-center justify-content-start">
-            <i class="fa-solid fa-quote-left fa-xl pb-4 ps-2"></i>
-            <p class="ps-2 fs-5"><%= review.content %></p>
-          </div>
-          <div id="review-end">
-            <p class="ps-2"><small>Reviewed by: <%= review.reviewer %></small></p>
-          </div>
-        </div>
-      </div>
-    <% end %>
-  <% else %>
-    <p class="p-2 text-black"> This user has no reviews yet!</p>
-  <% end %>
-<div>
 
-<%# review_helper - why not working? %>
+<div>
+  <div class="d-flex align-items-center justify-content-center ps-2">
+    <h4 id="profile-page-heading" class="pt-5 ps-2 pb-4"><%= @user.username.upcase %>'s profile page</h4>
+  </div>
+  <div class="d-flex justify-content-center">
+    <div class="d-flex flex-column" id="left-side">
+      <div id="review-section">
+    <h1 class="pb-3"> <%= @user.username %>'s feedback</h1>
+        <% if @reviews.any? == true %>
+          <% @reviews.each do |review| %>
+            <div id="review-card">
+              <div class="pt-2 border-bottom border-3 d-flex align-items-center justify-content-between" id="review-border">
+                <h4 class="ps-2"><b>Rating: </b><%= review.rating %></h4>
+                <p class="pe-2"><%= review.created_at.strftime("%d-%m-%Y") %></p>
+              </div>
+              <div id="review-body" class="d-flex align-items-center justify-content-start">
+                <i class="fa-solid fa-quote-left fa-xl pb-4 ps-2"></i>
+                <p class="ps-2 fs-5"><%= review.content %></p>
+              </div>
+              <div id="review-end">
+                <p class="ps-2"><small>Reviewed by: <%= review.reviewer %></small></p>
+              </div>
+            </div>
+          <% end %>
+        <% else %>
+          <p class="p-2 text-black"> This user has no reviews yet!</p>
+        <% end %>
+      </div>
+    </div>
+
+    <div id="sneaker-section">
+    <h1 class="pb-3 pt-4"><%= @user.username %> is selling</h1>
+        <div id="grid-reviews">
+        <% if @user.sneakers.any? %>
+          <% @user.sneakers.each do |sneaker| %>
+              <div class="grid-card">
+                <div style="width: 18rem;">
+                  <div>
+                    <% sneaker.photos.each_with_index do |photo, index| %>
+                      <% if index == 0 %>
+                        <%= cl_image_tag photo.key, height: 250, width: 300, crop: :fill, alt: sneaker.name %>
+                      <% end %>
+                    <% end %>
+                  </div>
+
+                  <div class="card-textbox" id="card-textbox-reviews">
+                    <p class="card-text fs-5 pt-3 ps-2"><%= link_to sneaker.name.upcase, sneaker %></p>
+                    <p class="card-text fs-5 pe-2 pb-1">£<%= sneaker.price %></p>
+                  </div>
+                </div>
+              </div>
+          <% end %>
+        <% else %>
+          <p>This user is not currently selling any sneakers</p>
+        <% end %>
+    </div>
+  </div>
+
+  </div>
+
+  <%# review_helper - why not working? %>
+</div>

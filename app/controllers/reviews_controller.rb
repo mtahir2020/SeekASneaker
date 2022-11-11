@@ -4,6 +4,7 @@ class ReviewsController < ApplicationController
     # we are getting the params[user_id] from the form.. isn't that the buyer though
     @reviews = Review.where(user_id: params[:user_id])
     @user = User.find(params[:user_id])
+    # want to show that user's sneakers here
   end
 
   def new

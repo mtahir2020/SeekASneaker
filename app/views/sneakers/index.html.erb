@@ -1,5 +1,4 @@
 <div class="banner">
-  <%# <div class="bottom-left"><span data-controller="typed-js"></span></div> %>
   <div class="bottom-left">The world's simplest sneaker marketplace</div>
   <div class="top-left">Seek<span>A</span>Sneaker</div>
     <% if user_signed_in? %>
@@ -7,16 +6,16 @@
     <% end %>
 </div>
 
-<div class="d-flex justify-content-center">
-  <div class="w-75 d-flex align-items-center flex-column mt-4">
+<div class="d-flex justify-content-start bg-white ">
+  <div class="w-75 d-flex align-items-center justify-content-start ps-3 pt-3">
     <% if @search && @search.length == 1%>
-      <h3 class="my-4 fs-1 "><b><%= @sneakers.length %> SNEAKER FOUND</b></h3>
-      <%= link_to "Refresh page", root_path, class: "mb-4" %>
+      <p id="latest-sneaker-heading"><b><%= @sneakers.length %> Sneakers found</b></p>
+      <%= link_to "Refresh page", root_path, class: "ms-3 mb-3 btn btn-danger", id: "refresh-page" %>
     <% elsif @search && @search.length > 1 %>
-      <h3 class="my-4 fs-1 "><b><%= @sneakers.length %> SNEAKERS FOUND</b></h3>
-      <%= link_to "Refresh page", root_path, class: "mb-4" %>
+      <p id="latest-sneaker-heading"><b><%= @sneakers.length %> Sneakers found</b></p>
+      <%= link_to "Refresh page", root_path, class: "ms-3 mb-3 btn btn-danger", id: "refresh-page" %>
     <% else %>
-      <h3 class="my-4 fs-1"><b>LATEST SNEAKERS</b></h3>
+      <p id="latest-sneaker-heading"><b>Latest sneakers</b></p>
     <% end %>
   </div>
 </div>

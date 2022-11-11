@@ -3,7 +3,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 10%;
-  height: 500px;
+  height: 700px;
   position: relative;
   color: white;
   border-radius: 5px;
@@ -11,7 +11,7 @@
 
 .bottom-left {
   position: absolute;
-  bottom: 12px;
+  top: 120px;
   left: 12px;
   font-size: 2rem;
   font-family: 'Rubik';
@@ -46,4 +46,8 @@
   height: 150px;
   position: relative;
   color: white;
+}
+
+#refresh-page {
+  text-decoration: none;
 }
