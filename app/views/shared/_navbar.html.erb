@@ -7,7 +7,7 @@
       <% end %>
       </li>
       <li class="nav-item pt-3">
-        <p><b><%= link_to "SeekASneaker", root_path%></b></p>
+        <p><b><%= link_to "SeekASneaker", root_path, class: "nav-link", id: "nav-link-main" %></b></p>
       </li>
       </ul>
     </div>
@@ -18,9 +18,10 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
+    <div class="collapse navbar-collapse d-flex align-items-center" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto d-flex justify-content-apart align-items-center">
         <% if user_signed_in? %>
+        <div class="d-flex justify-content-apart align-items-center pt-2 me-3">
           <li class="nav-item">
             <%= link_to "My Sneakers", my_sneakers_path, class: "nav-link" %>
           </li>
@@ -30,11 +31,10 @@
             <li class="nav-item">
             <%= link_to "My orders", orders_path, class: "nav-link" %>
           </li>
-          <li class="nav-item dropdown">
+        </div>
+          <li id="nav-dropdown" class="nav-item dropdown">
             <%= image_tag "img_4815.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%# <%= link_to "", "#", class: "dropdown-item" %>
-              <%# <%= link_to "List a sneaker", new_sneaker_path, class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
             </div>
           </li>

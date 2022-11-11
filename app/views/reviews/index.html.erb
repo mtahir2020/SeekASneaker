@@ -7,15 +7,15 @@
       <div class="d-flex justify-content-center">
         <div id="review-card">
           <div class="pt-2 border-bottom border-3 d-flex align-items-center justify-content-between bg-light">
-            <h4 class="ps-2"><b>Rating:</b> <%= review.rating %></h4>
+            <h4 class="ps-2"><b>Rating: </b><%= review.rating %></h4>
             <p class="pe-2"><%= review.created_at.strftime("%d-%m-%Y") %></p>
           </div>
-          <div class="d-flex align-items-center justify-content-start">
+          <div id="review-body" class="d-flex align-items-center justify-content-start">
             <i class="fa-solid fa-quote-left fa-xl pb-4 ps-2"></i>
             <p class="ps-2 fs-5"><%= review.content %></p>
           </div>
-          <div>
-            <p><small>Reviewed by: <%= review.reviewer %></small></p>
+          <div id="review-end">
+            <p class="ps-2"><small>Reviewed by: <%= review.reviewer %></small></p>
           </div>
         </div>
       </div>
@@ -24,3 +24,5 @@
     <p class="p-2 text-black"> This user has no reviews yet!</p>
   <% end %>
 <div>
+
+<%# review_helper - why not working? %>

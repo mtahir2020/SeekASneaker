@@ -13,16 +13,36 @@
 
 #navbar {
   color: rgba(6, 6, 6, 0.8);
+  background-color: rgba(207, 106, 106, 0.9);
 }
+
 .navbar-light .navbar-nav .nav-link {
-  color: rgb(73, 71, 71);
+  color: rgb(52, 50, 50);
 }
 
 .nav-item a{
   text-decoration: none;
-  color: rgb(209, 46, 46);
+  font-size: 1.25rem;
 }
 
 .nav-item a:hover {
-  color: rgb(158, 9, 16)
+  background-color: white;
+  border-radius: 8px;
+  transition: 0.5s;
+  color: black;
+  padding: 10px 2px;
 }
+
+#nav-link-main a {
+  color: yellow;
+}
+
+
+
+// #navbarSupportedContent .nav-item:hover {
+//   background-color: white;
+//   border-radius: 8px;
+//   transition: 0.5s;
+//   padding: 10px 10px;
+//   color: rgb(158, 9, 16);
+// }
