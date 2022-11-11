@@ -22,20 +22,19 @@
 
   </div>
 
-  <div class="d-flex flex-column align-items-center">
+  <div class="d-flex flex-column align-items-center-right">
     <div class="card-product-infos" >
       <h2><%= @sneaker.name.upcase %></h2>
       <p><%= @sneaker.description.capitalize %></p>
         <div class="price">
           <p class="price"><strong>£ <%= @sneaker.price %></strong></p>
         </div>
+        <div>
+          <%= simple_form_for [@sneaker, @order] do |f| %>
+            <%= f.submit "Buy Now", class: "button", id: "buy-btn" %>
+          <% end %>
+        </div>
+        <p class="mt-2"><%= link_to "Back", root_path, class: "link-button" %><p>
     </div>
-
-    <div>
-      <%= simple_form_for [@sneaker, @order] do |f| %>
-        <%= f.submit "Buy Now", class: "button", id: "buy-btn" %>
-      <% end %>
-    </div>
-    <p class="mt-2"><%= link_to "Back", root_path, class: "link-button" %><p>
   </div>
  </div>
