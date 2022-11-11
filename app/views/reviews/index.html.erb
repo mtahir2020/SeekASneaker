@@ -1,0 +1,25 @@
+
+
+<div>
+  <% if @reviews.any? == true %>
+    <% @reviews.each do |review| %>
+      <div class="border mb-3 w-75">
+        <h4 class="bg-light p-2 text-black"><b>Rating:</b> <%= review.rating %></h4>
+        <p class="p-2">"<%= review.content %>"</p>
+        <p>Date: <%= review.created_at.strftime("%d-%m-%Y") %></p>
+        <p>Trainers: </p>
+        <%# <%= review.user.orders %> %>
+
+        <p>Seller: <%= review.user.username %></p>
+        <p>Reviewer: <%= review.reviewer %></p>
+      </div>
+    <% end %>
+  <% else %>
+    <p class="p-2 text-black"> This user has no reviews yet!</p>
+  <% end %>
+<div>
+
+<%# <%= @order.sneaker %> %>
+
+<%# Review belongs to an order THROUGH user ???????????%>
+<%# order has_one :review, through: :user added to order model %>

@@ -1,5 +1,3 @@
-<%# diplaying out added sneakers %>
-
 <div class="d-flex py-5 px-5 card-product">
   <div>
     <%# <%= cl_image_tag @sneaker.photos.first.key, :width=>350, :height=>350, crop: "fit"  %> %>
@@ -8,7 +6,7 @@
       <% @sneaker.photos.each_with_index do |photo,index| %>
 
       <div class="carousel-item <%="active" if index.zero? %>">
-        <img src="<%= cl_image_path photo.key %>" class="d-block w-100" alt="...">
+        <img src="<%= cl_image_path photo.key %>" class="d-block w-100 " alt="...">
       </div>
       <% end %>
     </div>
@@ -39,7 +37,4 @@
         <p class="mt-2"><%= link_to "Back", root_path, class: "link-button" %><p>
     </div>
   </div>
-
-
-
-</div>
+ </div>
