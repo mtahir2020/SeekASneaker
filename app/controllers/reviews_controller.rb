@@ -1,9 +1,9 @@
 class ReviewsController < ApplicationController
   def index
     # @reviews = Review.all
-    # we want to get the order in here, so we can get the user associated with it
+    # we are getting the params[user_id] from the form.. isn't that the buyer though
     @reviews = Review.where(user_id: params[:user_id])
-    # this is not right - is displaying for every single user
+
   end
 
   def new
