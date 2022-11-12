@@ -17,7 +17,7 @@
 }
 
 .card-order {
-  width: 300px;
+  width: auto;
   border: 2px;
   border-radius: 0px;
   margin: 8px;
@@ -32,7 +32,7 @@
 }
 
 .order-container {
-  width: 100%;
+  width: auto;
   display: flex;
   justify-content: center;
 }
@@ -42,25 +42,32 @@
   font-size: medium;
   color: darkgray;
   text-decoration-line: underline;
-  margin-top: 0.5cm;
+  margin-top: 4.5px;
+  padding-top: 9.2px;
 }
 
 .details-order {
 
 }
 
-h3.text-order {
+.text-order {
   text-align: center;
 }
 
 .order-spacing {
-  text-indent: 50px;
-  margin-bottom: 15px;
-  padding: 0;
+  text-align: center;
+  margin-bottom: 1px;
+  // padding: 1px
+  padding-bottom: 9px;
+
 }
 
 .text-order {
   text-align: center;
-  margin-top: 0.75cm;
-  margin-bottom: 0.75cm;
+  margin-top: 0.5cm;
+  margin-bottom: 0.5cm;
+}
+
+.order-card {
+  background-color: whitesmoke;
 }
