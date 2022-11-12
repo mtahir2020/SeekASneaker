@@ -7,7 +7,7 @@
 <div class="order-container">
   <div class="row">
     <% @orders.each do |order| %>
-      <div class="col-12">
+      <div class="col-4">
       <div class="card-order">
       <% order.sneaker.photos.each_with_index do |photo, index| %>
       <% if index == 0 %>
