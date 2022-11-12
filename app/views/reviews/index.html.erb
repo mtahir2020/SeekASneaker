@@ -6,7 +6,7 @@
   <div class="d-flex justify-content-center">
     <div class="d-flex flex-column" id="left-side">
       <div id="review-section">
-    <h1 class="pb-3"> <%= @user.username %>'s feedback</h1>
+    <h1 class="pb-3"> User feedback</h1>
         <% if @reviews.any? == true %>
           <% @reviews.each do |review| %>
             <div id="review-card">
@@ -30,7 +30,7 @@
     </div>
 
     <div id="sneaker-section">
-    <h1 class="pb-3 pt-4"><%= @user.username %> is selling</h1>
+    <h1 class="pb-3 pt-4">User is selling</h1>
         <div id="grid-reviews">
         <% if @user.sneakers.any? %>
           <% @user.sneakers.each do |sneaker| %>
@@ -39,14 +39,14 @@
                   <div>
                     <% sneaker.photos.each_with_index do |photo, index| %>
                       <% if index == 0 %>
-                        <%= cl_image_tag photo.key, height: 250, width: 300, crop: :fill, alt: sneaker.name %>
+                        <%= cl_image_tag photo.key, height: 150, width: 200, crop: :fill, alt: sneaker.name %>
                       <% end %>
                     <% end %>
                   </div>
 
                   <div class="card-textbox" id="card-textbox-reviews">
-                    <p class="card-text fs-5 pt-3 ps-2"><%= link_to sneaker.name.upcase, sneaker %></p>
-                    <p class="card-text fs-5 pe-2 pb-1">£<%= sneaker.price %></p>
+                    <p class="card-text pt-3 ps-2"><%= link_to sneaker.name.upcase, sneaker %></p>
+                    <p class="card-text pe-2">£<%= sneaker.price %></p>
                   </div>
                 </div>
               </div>
