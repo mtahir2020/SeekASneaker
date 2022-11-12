@@ -2,7 +2,7 @@
   <div class="order pt-4 card-product-confirmation">
     <div class="card-product-infos-top">
       <h2>Your order is confirmed!</h2>
-      <h2>Registered e-mail:</h2>
+      <h2>A confirmation email has been sent to:</h2>
       <p class='line'><strong><%= current_user.email %></strong></p>
     </div>
   </div>
@@ -36,6 +36,7 @@
       <div class="sneaker-confirmed-details">
         <h2>Order details:</h2>
         <p class='mb-3 line'><%= @order.sneaker.name %></p>
+        <p class='line'>Size <%= @order.sneaker.size %></p>
         <p class='line'><%= @order.created_at.strftime("%d-%m-%Y") %></p>
         <p class='line'><strong>Total: £ <%= @order.sneaker.price %></strong></p>
       </div>

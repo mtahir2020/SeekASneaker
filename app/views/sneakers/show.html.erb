@@ -19,13 +19,14 @@
 
 
   <div class="sneaker-show-details">
-      <small id="seller">Seller: <%= link_to @seller.username, user_reviews_path(@seller), id: "seller-hyperlink" %></small>
       <div class="sneaker-details">
         <h2><%= @sneaker.name.upcase %></h2>
+        <p>Size <%= @sneaker.size %> </p>
         <p><%= @sneaker.description.capitalize %></p>
         <p><strong>£ <%= @sneaker.price %></strong></p>
+        <small>Seller: <%= link_to @seller.username, user_reviews_path(@seller), id: "seller-hyperlink" %></small>
       </div>
-      <div class="pb-5">
+      <div class="pb-5" id="buy-form">
         <%= simple_form_for [@sneaker, @order] do |f| %>
           <%= f.submit "Buy Now", class: "button", id: "buy-btn" %>
         <% end %>

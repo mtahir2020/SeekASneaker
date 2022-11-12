@@ -1,8 +1,13 @@
 
 <div>
-  <div class="d-flex align-items-center justify-content-center ps-2 reviews-confirmation">
-    <h4 id="profile-page-heading" class="pt-5 ps-2 pb-4"><%= @user.username.upcase %>'s profile page</h4>
+
+
+ <div class="order pt-4 card-product-confirmation">
+    <div class="card-product-infos-top">
+      <h1><%= @user.username.upcase %>'s profile page</h4></h2>
+    </div>
   </div>
+
   <div class="d-flex justify-content-center">
     <div class="d-flex flex-column" id="left-side">
       <div id="review-section">
@@ -30,7 +35,7 @@
     </div>
 
     <div id="sneaker-section">
-    <h1 class="pb-3 pt-4">User is selling</h1>
+    <h1 class="pt-4" >User is selling</h1>
         <div id="grid-reviews">
         <% if @user.sneakers.any? %>
           <% @user.sneakers.each do |sneaker| %>
