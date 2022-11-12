@@ -24,6 +24,16 @@
   color: white;
 }
 
+
+#nav-link-main {
+  font-weight: bold;
+  color: white;
+}
+
+#nav-link-main:hover {
+  color: rgb(183, 53, 64);
+}
+
 .nav-item a{
   text-decoration: none;
   font-size: 1.25rem;
@@ -34,16 +44,16 @@
   border-radius: 8px;
   transition: 0.5s;
   color: rgb(183, 53, 64);
-}
-
-#nav-link-main {
+  padding: 6px 6px;
   font-weight: bold;
-  color: white;
 }
 
-#nav-link-main:hover {
-  color: rgb(183, 53, 64);;
+.nav-link-not-logged {
+  color: white;
+  margin-left: 24px;
+  width: 30px;
 }
+
 
 // #navbarSupportedContent .nav-item:hover {
 //   background-color: white;
