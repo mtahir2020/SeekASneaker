@@ -7,7 +7,7 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   margin: auto;
-  margin-top: 50px;
+  margin-top: 30px;
   margin-bottom: 50px;
 }
 
@@ -53,11 +53,12 @@
 .sneaker-show-details {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
   width: 400px;
   border-left: 1px solid rgba(131, 126, 126, 0.2);
   text-shadow: 0 0 15px rgba(0,0,0,0.1);
+  background-color: #F4F1F1;
 }
 
 #seller {
@@ -74,6 +75,7 @@
 .sneaker-details {
   text-align: center;
   color: black;
+  padding-top: 80px;
 }
 
 .sneaker-confirmed-details {
@@ -102,7 +104,7 @@
 
 #seller-hyperlink {
   text-decoration: none;
-  color: black;
+  color: darkred;
   font-weight: bold;
 }
 
@@ -128,4 +130,8 @@
   align-items: center;
   flex-direction: column;
   padding-top: 10px;
+}
+
+#buy-form {
+  padding-top: 60px;
 }
