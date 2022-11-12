@@ -11,42 +11,76 @@
   margin-bottom: 50px;
 }
 
+.card-product-confirmation {
+  overflow: hidden;
+  height: 200px;
+  width: 1200px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  margin: auto;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
 // .card-product img {
 //   object-fit: cover;
 // }
 
-#order-container {
+.reviews-confirmation {
+  overflow: hidden;
+  height: 100px;
+  width: 1200px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
-  flex-direction: column;
-  background-color: #100a0a93;
-  color: white;
-  justify-content: space-around;
-  align-items: center;
-  width: 400px;
+  margin: auto;
+  margin-top: 25px;
+  margin-bottom: 25px;
 }
+
 
 #order-confirmed-container {
   display: flex;
   flex-direction: column;
-  background-color: white;
+  background-color: rgb(245, 241, 241);
   justify-content: space-around;
   align-items: center;
   width: 400px;
+  border-left: 1px solid rgba(131, 126, 126, 0.2);
+  text-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+.sneaker-show-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 400px;
+  border-left: 1px solid rgba(131, 126, 126, 0.2);
+  text-shadow: 0 0 15px rgba(0,0,0,0.1);
 }
 
 #seller {
   padding-bottom: 60px;
-  color: white;
+  color: black;
+  font-size: 12px;
+  display: flex;
+  justify-content: flex-start;
+  padding-top: 10px;
+  width: 100%;
+  padding-left: 20px;
 }
 
 .sneaker-details {
   text-align: center;
-  color: white;
+  color: black;
 }
 
 .sneaker-confirmed-details {
   text-align: center;
   color: black;
+  text-shadow: 0 0 15px rgba(0,0,0,0.2);
+  // background-color: rgb(245, 241, 241);
 }
 
 .sneaker-details h2{
@@ -68,12 +102,13 @@
 
 #seller-hyperlink {
   text-decoration: none;
-  color: lightcoral;
+  color: black;
+  font-weight: bold;
 }
 
 #seller-hyperlink:hover {
   text-decoration: none;
-  color: red;
+  color: #be1717;
 }
 
 .order {
@@ -85,8 +120,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-}
+  flex-direction: column;}
 
 .card-product-infos-top {
   display: flex;

@@ -1,6 +1,6 @@
 <div>
   <%= simple_form_for [@user, @review] do |f| %>
-    <%= f.input :rating, collection: (1..5).to_a, label: "Rate this user" %>
+    <%= f.input :rating, collection: (1..5).to_a, label: "Rate this user", input_html: {data: {controller: "star-rating"}} %>
     <%= f.input :content %>
     <%= f.submit %>
   <% end %>
