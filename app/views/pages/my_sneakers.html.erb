@@ -15,18 +15,18 @@
             </div>
           </div>
           <div class="card-background">
-            <div class="card-textbox flex-description sneaker-details shadow">
+            <div class="card-textbox flex-description sneaker-change shadow">
               <div>
-              <p class="card-sneaker-text fs-5 pt-5 ps-2 fw-bold "><%= link_to sneaker.name.upcase, sneaker %></p>
+              <p class="card-sneaker-text fs-5 pt-5 ps-2 fw-bold "><%= link_to sneaker.name.upcase, sneaker, class:'final-demo' %></p>
               <p class= "pt-3"><%= sneaker.description %></p>
               <p class="card-text fs-5 pe-2 pt-3 fw-bold">£<%= sneaker.price %></p>
               <div class="column-buttons">
                 <%= link_to "Change", edit_sneaker_url(sneaker), id: "change-btn"%>
-                <%= link_to "Delete",
+                <%# <%= link_to "Delete",
                   sneaker_path(sneaker),
                   id: "delete-btn",
                   data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-                %>
+                %> 
               </div>
             </div>
             </div>
