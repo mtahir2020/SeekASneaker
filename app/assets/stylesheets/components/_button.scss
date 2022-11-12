@@ -4,8 +4,15 @@
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 1.5rem;
-  padding: 16px 24px;
+  padding: 12px 120px;
+  background-color: rgb(183, 53, 64);;
 }
+
+#banner-btn:hover {
+  background-color: rgb(232, 62, 76)
+}
+
+
 
 #buy-btn {
   padding: 10px 50px;
