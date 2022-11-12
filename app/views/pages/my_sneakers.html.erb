@@ -1,10 +1,11 @@
 <div class="d-flex flex-column align-items-center justify-content-center pt-2">
    <h3>My listed sneakers</h3>
    <div class="container mt-5">
+   <div >
      <div >
       <% @sneakers.each do |sneaker| %>
-      <div class="d-flex justify-content-center mb-2">
-          <div >
+      <div class="d-flex justify-content-center mb-4">
+          <div>
             <div>
              <% sneaker.photos.each_with_index do |photo, index| %>
                 <% if index == 0 %>
@@ -19,6 +20,10 @@
               <%= sneaker.description %>
               <p class="card-text fs-5 pe-2">£<%= sneaker.price %></p>
               <%= link_to "Change", edit_sneaker_url(sneaker)%>
+              <%= link_to "Delete",
+                sneaker_path(sneaker),
+                data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+              %>
             </div>
           </div>
       </div>
