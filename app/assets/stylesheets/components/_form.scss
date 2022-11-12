@@ -40,7 +40,7 @@
   display: flex;
   align-items: center;
   margin: 30px;
-  justify-content: flex-start;
+  justify-content: center;
 }
 
 p {
@@ -60,7 +60,9 @@ p {
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   align-items: center;
   margin: 30px;
-  justify-content: flex-start;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: -18px;
 }
 
 .link-form {
