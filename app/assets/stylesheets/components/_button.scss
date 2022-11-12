@@ -11,6 +11,10 @@
   border-radius: 8px;
 }
 
+#buy-btn:hover {
+  background-color: #be1717;
+}
+
 .button {
   background-color: #c74e4e;; /* Green */
   border: none;
@@ -48,8 +52,16 @@
   border-radius: 8px;
   background-color: lightgrey;
   width: 164px;
+  text-decoration: none;
 }
 
 #back-btn a {
   color: black;
+  text-decoration: none;
+}
+
+#back-btn:hover {
+  color: white;
+  background-color: rgb(172, 170, 170)
+
 }
