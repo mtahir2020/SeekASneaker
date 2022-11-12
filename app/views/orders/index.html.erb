@@ -1,21 +1,25 @@
 <div class="text-order"><h1>YOUR PAST ORDERS!</h1></div>
 <div class="order-container">
-  <div class="d-flex">
+  <div class="row">
     <% @orders.each do |order| %>
+      <div class="col-4">
       <div class="card-order">
       <% order.sneaker.photos.each_with_index do |photo, index| %>
       <% if index == 0 %>
-        <%= cl_image_tag photo.key, height: 350, width: 300, crop: :fill, alt: order.sneaker.name %>
+        <%= cl_image_tag photo.key, height: 340, width: 400, alt: order.sneaker.name %>
       <% end %>
     <% end %>
-        <div>
-          <h1 class="order-id">Order no.  <%= order.id %></h1>
-          <h3 class="text-order"><%= order.sneaker.name.capitalize %></h3>
-          <p class="order-spacing">£<%= order.sneaker.price %></p>
-          <p class="order-spacing">Listed by: <%= order.sneaker.user_id %></p>
-          <p class="order-spacing">order created at: <%= order.sneaker.created_at.strftime("%d-%m-%Y") %></p>
-        </div>
+          <div class="order-card">
+            <h1 class="order-id">Order no.  <%= order.id %></h1>
+            <h3 class="text-order"><%= order.sneaker.name.capitalize %></h3>
+            <p class="order-spacing">£<%= order.sneaker.price %></p>
+            <p class="order-spacing">Listed by: <%= order.sneaker.user_id %></p>
+            <p class="order-spacing">Made at: <%= order.sneaker.created_at.strftime("%d-%m-%Y") %></p>
+          </div>
+    </div>
     </div>
     <% end %>
+    </div>
   </div>
+  <div class="d-flex align-items-center justify-content-center"><%= link_to "Back to homepage", root_path, class: "ms-3 mb-3 btn btn-danger" %></div>
 </div>
