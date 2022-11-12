@@ -12,7 +12,7 @@
 .bottom-left {
   position: absolute;
   top: 120px;
-  left: 12px;
+  left: 24px;
   font-size: 2rem;
   font-family: 'Rubik';
   text-shadow: 1px 1px 1px #000;
@@ -20,12 +20,9 @@
 }
 
 .top-left {
-  // background: -webkit-linear-gradient(#eee, #BC2D3B);
-  // -webkit-background-clip: text;
-  // -webkit-text-fill-color: transparent;
   position: absolute;
   top: 0;
-  left: 12px;
+  left: 24px;
   font-size: 6rem;
   font-family: 'Rubik';
   text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;

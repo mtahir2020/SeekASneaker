@@ -13,11 +13,15 @@
 
 #navbar {
   color: rgba(6, 6, 6, 0.8);
-  background-color: rgba(207, 106, 106, 0.9);
+  background: #333131;
 }
 
 .navbar-light .navbar-nav .nav-link {
   color: rgb(52, 50, 50);
+}
+
+.nav-item {
+  color: white;
 }
 
 .nav-item a{
@@ -29,16 +33,17 @@
   background-color: white;
   border-radius: 8px;
   transition: 0.5s;
-  color: black;
-  padding: 5px 2px;
+  color: rgb(183, 53, 64);
 }
 
 #nav-link-main {
   font-weight: bold;
-  colour: black;
+  color: white;
 }
 
-
+#nav-link-main:hover {
+  color: rgb(183, 53, 64);;
+}
 
 // #navbarSupportedContent .nav-item:hover {
 //   background-color: white;

@@ -1,10 +1,18 @@
 #banner-btn {
   position: absolute;
-  top: 20px;
-  right: 12px;
-  padding-left: 20px;
-  padding-right: 20px;
+  top: 56%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+  padding: 12px 120px;
+  background-color: rgb(183, 53, 64);;
 }
+
+#banner-btn:hover {
+  background-color: rgb(232, 62, 76)
+}
+
+
 
 #buy-btn {
   padding: 10px 50px;
