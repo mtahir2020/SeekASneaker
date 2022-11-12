@@ -40,7 +40,7 @@
   display: flex;
   align-items: center;
   margin: 30px;
-  justify-content: flex-start;
+  justify-content: center;
 }
 
 p {
@@ -53,14 +53,17 @@ p {
 .create {
   height: 100px;
   width: 500px;
-  padding: 14px 32px;
+  padding: 26px 27px;
   display: flex;
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   align-items: center;
   margin: 30px;
-  justify-content: flex-start;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: -18px;
+  display: table;
 }
 
 .link-form {
