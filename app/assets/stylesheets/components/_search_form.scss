@@ -21,3 +21,14 @@
   outline: none !important;
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }
+
+#magnifying-glass {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  opacity: 0.8;
+}
+
+#search-button {
+  background-color: lightgray;
+}

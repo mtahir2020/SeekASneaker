@@ -1,74 +1,97 @@
-p {
-  padding-top: 5px;
-  padding-bottom: 0px;
 
-}
 .card-product {
   overflow: hidden;
-  height: 600px;
-  width: 1000px;
+  height: 800px;
+  width: 1200px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
-  align-items: center;
   margin: auto;
   margin-top: 50px;
   margin-bottom: 50px;
-  // justify-content: space-between;
+}
+
+// .card-product img {
+//   object-fit: cover;
+// }
+
+#order-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #100a0a93;
+  color: white;
+  justify-content: space-around;
+  align-items: center;
+  width: 400px;
+}
+
+#order-confirmed-container {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  justify-content: space-around;
+  align-items: center;
+  width: 400px;
+}
+
+#seller {
+  padding-bottom: 60px;
+  color: white;
+}
+
+.sneaker-details {
+  text-align: center;
+  color: white;
+}
+
+.sneaker-confirmed-details {
+  text-align: center;
+  color: black;
+}
+
+.sneaker-details h2{
+  font-size: 2.5rem;
+}
+
+.sneaker-details p {
+  font-size: 1.25rem;
+}
+
+.sneaker-details p strong {
+  font-size: 2rem;
+}
+
+#carouselExampleControls {
+  // padding-right: 20px;
+  width: 800px;
+}
+
+#seller-hyperlink {
+  text-decoration: none;
+  color: lightcoral;
+}
+
+#seller-hyperlink:hover {
+  text-decoration: none;
+  color: red;
 }
 
 .order {
-  overflow: hidden;
-  height: 200px;
-  width: 1000px;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
+  justify-content: center;
+}
+
+.card-product-infos {
+  display: flex;
+  justify-content: center;
   align-items: center;
-  margin: auto;
-  margin-bottom: 0;
-  margin-top: 50px;
-  justify-content: space-around;
-}
-
-.card-product img {
-  // height: 100%;
-  // width: 250px;
-  object-fit: cover;
-  margin-bottom: 150px;
-}
-
-.card-product h2 {
-  font-size: 24px;
-  font-weight: bold;
-  margin: 0;
-}
-
-.card-product p {
-  font-size: 16px;
-  line-height: 1.4;
-  opacity: .7;
-  margin-bottom: 0;
-  margin-top: 8px;
-}
-
-.card-product .card-product-infos {
-  padding: 50px;
-  text-align: center;
-  // padding-right: 50px;
-  // padding-left: 50px;
-  display: flex;
   flex-direction: column;
-  justify-content: right;
-  // margin-left: 50px;
 }
 
-.order .card-product-infos {
-  padding: 25px;
-  text-align: center;
-}
-
-
-.price {
-  margin-bottom: 10px;
+.card-product-infos-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 10px;
 }

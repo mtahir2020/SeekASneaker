@@ -1,0 +1,58 @@
+#review-card {
+  width: 100%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  margin-bottom: 25px;
+}
+
+#review-section {
+  width: 800px;
+  margin-left: 25px;
+  margin-right: 25px;
+  padding-top: 20px;
+}
+
+#sneaker-section {
+  border-left: 1px solid rgba(0, 0, 0, 0.2);
+  background-color: white;
+  margin-left: 40px;
+}
+
+#grid-reviews {
+  display: grid;
+  grid-template-columns: 300px 300px 300px;
+  grid-template-rows: 300px 300px 300px;
+  grid-row-gap: 30px;
+  grid-column-gap: 40px;
+  padding: 20px;
+}
+
+#card-textbox-reviews {
+  width: 300px;
+}
+
+#left-side {
+  background-color: white;
+}
+
+#review-border {
+  background-color: rgb(129, 127, 127);
+  color: white;
+}
+
+#review-body {
+  padding-top: 10px;
+}
+
+#profile-page-heading {
+  font-weight: bold;
+}
+
+#review-form {
+  width: 600px;
+  background-color: #817F7F;
+  color: white;
+  padding: 20px 20px;
+  border-radius: 8px;
+}

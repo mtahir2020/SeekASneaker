@@ -7,7 +7,8 @@
 }
 
 #buy-btn {
-  padding: 10px 50px
+  padding: 10px 50px;
+  border-radius: 8px;
 }
 
 .button {
@@ -40,4 +41,15 @@
   padding: 15px 32px;
   display: flex;
 
+}
+
+#back-btn {
+  padding: 10px 50px;
+  border-radius: 8px;
+  background-color: lightgrey;
+  width: 164px;
+}
+
+#back-btn a {
+  color: black;
 }

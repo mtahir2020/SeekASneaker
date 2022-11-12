@@ -14,6 +14,7 @@ class SneakersController < ApplicationController
   def show
     @sneaker = Sneaker.find(params[:id])
     @order = Order.new
+    @seller = User.find(@sneaker.user_id)
     # if @order.save
     #   redirect_to sneaker(@sneaker)
     # end

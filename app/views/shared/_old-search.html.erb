@@ -1,6 +1,9 @@
 <%# <div class="py-2"> %>
   <form id="nav-form" class="d-flex justify-content-center" action="/" method="get">
-    <input id="nav-input" type="text" class="py-2 rounded me-2" name="search" value="<%=params[:search]%>" placeholder="Search sneakers..">
-    <input type="submit" value="Search" class="px-3 py-2 rounded ">
+    <div class="position-relative">
+      <input id="nav-input" type="text" class="py-2 rounded me-2 form-control string required" name="search" value="<%=params[:search]%>" placeholder="Search sneakers..">
+      <i id="magnifying-glass" class="fas fa-search"></i>
+    </div>
+    <input type="submit" value="Search" class="btn btn-flat border" id="search-button">
   </form>
 <%# </div> %>
