@@ -4,3 +4,17 @@
   background-color: grey;
   height: 100%;
 }
+
+.shadow {
+  box-shadow: 0 0 10px rgba(0,0,0,0.5)
+}
+
+#big-container {
+  height: 350px;
+  width: 700px;
+
+}
+.column-buttons {
+  display: flex;
+  flex-direction: column;
+}

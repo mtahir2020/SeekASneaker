@@ -5,7 +5,7 @@
      <div >
       <% @sneakers.each do |sneaker| %>
       <div class="d-flex justify-content-center mb-4">
-          <div>
+          <div class="shadow">
             <div>
              <% sneaker.photos.each_with_index do |photo, index| %>
                 <% if index == 0 %>
@@ -14,20 +14,26 @@
               <% end %>
             </div>
           </div>
-          <div >
-            <div class="card-textbox flex-description">
-              <p class="card-text fs-5 pt-3 ps-2"><%= link_to sneaker.name.upcase, sneaker %></p>
-              <%= sneaker.description %>
-              <p class="card-text fs-5 pe-2">£<%= sneaker.price %></p>
-              <%= link_to "Change", edit_sneaker_url(sneaker)%>
-              <%= link_to "Delete",
-                sneaker_path(sneaker),
-                data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-              %>
+          <div class="card-background">
+            <div class="card-textbox flex-description sneaker-details shadow">
+              <div>
+              <p class="card-sneaker-text fs-5 pt-5 ps-2 fw-bold "><%= link_to sneaker.name.upcase, sneaker %></p>
+              <p class= "pt-3"><%= sneaker.description %></p>
+              <p class="card-text fs-5 pe-2 pt-3 fw-bold">£<%= sneaker.price %></p>
+              <div class="column-buttons">
+                <%= link_to "Change", edit_sneaker_url(sneaker), id: "change-btn"%>
+                <%= link_to "Delete",
+                  sneaker_path(sneaker),
+                  id: "delete-btn",
+                  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+                %>
+              </div>
+            </div>
             </div>
           </div>
       </div>
     <% end %>
     </div>
   </div>
+</div>
 </div>
