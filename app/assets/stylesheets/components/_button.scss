@@ -51,7 +51,14 @@
 
 }
 
-#back-btn {
+#back-btn,
+#change-btn {
+  margin: 10px 0;
+}
+
+#delete-btn,
+#back-btn,
+#change-btn {
   padding: 10px 50px;
   border-radius: 8px;
   background-color: lightgrey;
