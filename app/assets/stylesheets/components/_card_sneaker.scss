@@ -47,7 +47,7 @@
   align-items: center;
   width: 400px;
   border-left: 1px solid rgba(131, 126, 126, 0.2);
-  text-shadow: 0 0 15px rgba(0,0,0,0.1);
+  // text-shadow: 0 0 15px rgba(0,0,0,0.1);
 }
 
 .sneaker-show-details {
@@ -75,7 +75,7 @@
 .sneaker-details {
   text-align: center;
   color: black;
-  padding-top: 80px;
+  padding: 10px;
 }
 
 .sneaker-confirmed-details {
@@ -132,6 +132,6 @@
   padding-top: 10px;
 }
 
-#buy-form {
-  padding-top: 60px;
-}
+// #buy-form {
+//   padding-top: 60px;
+// }

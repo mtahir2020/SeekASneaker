@@ -32,6 +32,10 @@ user_2 = User.new(email: "angee@gmail.com", username: "Angee", password: "123456
 user_2.save!
 puts "creating"
 
+user_3 = User.new(email: "mustafatahir@hotmail.co.uk", username: "Mustafa", password: "123456")
+user_3.save!
+puts "creating"
+
 
 
 # sneaker_file = URI.open("#{sneaker_photos[0]}")
@@ -66,10 +70,10 @@ sneaker_1_photo = ['https://res.cloudinary.com/dchcu1duv/image/upload/v166826333
 
 sneaker_1_filenames = ['10-11-22_JF_BB550NCF_m1_1_id1p3u.jpg', '10-11-22_JF_BB550NCF_3_1_gl7gli.jpg']
 
-sneaker_2_photo = ['https://res.cloudinary.com/dchcu1duv/image/upload/v1668263310/11-11-2022_EC_KFA30-020_m1_1_gccrb6.jpg',
-  'https://res.cloudinary.com/dchcu1duv/image/upload/v1668263318/11-11-2022_EC_KFA30-020_3_1_irekgt.jpg']
+sneaker_2_photo = ['https://res.cloudinary.com/dk0o6d2gx/image/upload/v1674684876/production/26315122_l_inbhd1.jpg',
+  'https://res.cloudinary.com/dk0o6d2gx/image/upload/v1674684876/production/26315122_l_a3_zty9k2.jpg']
 
-sneaker_2_filenames = ['11-11-2022_EC_KFA30-020_m1_1_gccrb6.jpg', '11-11-2022_EC_KFA30-020_3_1_irekgt.jpg']
+sneaker_2_filenames = ['26315122_l_inbhd126315122_l_inbhd1', '26315122_l_a3_zty9k2']
 
 sneaker_3_photo = ['https://res.cloudinary.com/dchcu1duv/image/upload/v1668262876/27-10-2022_EC_BB550PWA_m1_1_waikbh.jpg',
   'https://res.cloudinary.com/dchcu1duv/image/upload/v1668263289/27-10-2022_EC_BB550PWA_3_1_h2mm91.jpg']
@@ -82,16 +86,22 @@ sneaker_4_photo = ['https://res.cloudinary.com/dchcu1duv/image/upload/v166826335
 
   sneaker_4_filenames = ['17-05-2022_BLR_MR530EMA_1_1_z1jl3w.jpg', '11-11-2022_EC_L41706200_3_1_vzsk5p.jpg']
 
-sneaker_5_photo = ['https://res.cloudinary.com/dchcu1duv/image/upload/v1668263380/11-11-2022_EC_L41706200_m1_1_dbhdr1.jpg',
-  'https://res.cloudinary.com/dchcu1duv/image/upload/v1668263387/11-11-2022_EC_L41706200_3_1_vzsk5p.jpg']
+sneaker_5_photo = ['https://res.cloudinary.com/dk0o6d2gx/image/upload/v1674684876/production/12141040_l_a1_heijcx.webp',
+  'https://res.cloudinary.com/dk0o6d2gx/image/upload/v1674684876/production/12141040_l_reqrj4.webp']
 
 
-  sneaker_5_filenames = ['11-11-2022_EC_L41706200_m1_1_dbhdr1.jpg', '11-11-2022_EC_L41706200_3_1_vzsk5p.jpg']
+  sneaker_5_filenames = ['12141040_l_a1_heijcx', '12141040_l_reqrj4']
 
 sneaker_6_photo = ['https://res.cloudinary.com/dchcu1duv/image/upload/v1668263408/15-09-2022_jc_dj0292-101_1_lppqbi.jpg',
   'https://res.cloudinary.com/dchcu1duv/image/upload/v1668263415/15-09-2022_jc_dj0292-101_3_er0hch.jpg']
 
   sneaker_6_filenames = ['15-09-2022_jc_dj0292-101_1_lppqbi.jpg', '15-09-2022_jc_dj0292-101_3_er0hch.jpg']
+
+  sneaker_7_photo = ['https://res.cloudinary.com/dk0o6d2gx/image/upload/v1674684875/production/15133701_l_yorqxk.avif',
+    'https://res.cloudinary.com/dk0o6d2gx/image/upload/v1674684875/production/15133701_l_a1_v2vciu.webp']
+
+    sneaker_7_filenames = ['15133701_l_yorqxk', '15133701_l_a1_v2vciu']
+
 
   sneaker_1_file = URI.open(sneaker_1_photo[0])
   sneaker_1a_file = URI.open(sneaker_1_photo[1])
@@ -109,10 +119,10 @@ sneaker_6_photo = ['https://res.cloudinary.com/dchcu1duv/image/upload/v166826340
   sneaker_2_file = URI.open(sneaker_2_photo[0])
   sneaker_2a_file = URI.open(sneaker_2_photo[1])
   sneaker_2 = Sneaker.create(
-    user: user_2,
-    name: 'ROA KATHARINA HIKING SNEAKER',
+    user: user_3,
+    name: 'ADIDAS SAMBA SUEDE',
     price: 129,
-    description: 'LILAC'
+    description: 'NAVY'
   )
   sneaker_2.photos.attach(io: sneaker_2_file, filename: "#{sneaker_2_filenames[0]}", content_type: 'image/jpg')
   sneaker_2.photos.attach(io: sneaker_2a_file, filename: "#{sneaker_2_filenames[1]}", content_type: 'image/jpg')
@@ -148,10 +158,10 @@ sneaker_6_photo = ['https://res.cloudinary.com/dchcu1duv/image/upload/v166826340
   sneaker_5_file = URI.open(sneaker_5_photo[0])
   sneaker_5a_file = URI.open(sneaker_5_photo[1])
   sneaker_5 = Sneaker.create(
-    user: user_2,
-    name: 'SALOMON XT-QUEST',
+    user: user_3,
+    name: 'AIR MAX LTD 3 MEN',
     price: 165,
-    description: 'GOLDEN OAK & ACORN'
+    description: 'BLACK, GREY, RED'
   )
   sneaker_5.photos.attach(io: sneaker_5_file, filename: "#{sneaker_5_filenames[0]}", content_type: 'image/jpg')
   sneaker_5.photos.attach(io: sneaker_5a_file, filename: "#{sneaker_5_filenames[1]}", content_type: 'image/jpg')
@@ -170,3 +180,16 @@ sneaker_6_photo = ['https://res.cloudinary.com/dchcu1duv/image/upload/v166826340
   sneaker_6.photos.attach(io: sneaker_6a_file, filename: "#{sneaker_6_filenames[1]}", content_type: 'image/jpg')
     sneaker_6.save
     puts "creating #{sneaker_6}"
+
+    sneaker_7_file = URI.open(sneaker_7_photo[0])
+    sneaker_7a_file = URI.open(sneaker_7_photo[1])
+    sneaker_7 = Sneaker.create(
+      user: user,
+      name: 'LEBRON XX BASKETBALL SHOES',
+      price: 85,
+      description: 'WHITE, GOLD, BLACK'
+    )
+    sneaker_7.photos.attach(io: sneaker_7_file, filename: "#{sneaker_7_filenames[0]}", content_type: 'image/jpg')
+    sneaker_7.photos.attach(io: sneaker_7a_file, filename: "#{sneaker_7_filenames[1]}", content_type: 'image/jpg')
+      sneaker_7.save
+      puts "creating #{sneaker_7}"

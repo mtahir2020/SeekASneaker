@@ -17,6 +17,7 @@
 }
 
 .card-order {
+  display: flex;
   width: auto;
   border: 2px;
   border-radius: 0px;
@@ -32,9 +33,10 @@
 }
 
 .order-container {
-  width: auto;
+  width: 90%;
   display: flex;
   justify-content: center;
+  margin: auto;
 }
 
 .order-id {
@@ -56,9 +58,9 @@
 
 .order-spacing {
   text-align: center;
-  margin-bottom: 1px;
+  // margin-bottom: 1px;
   // padding: 1px
-  padding-bottom: 9px;
+  // padding-bottom: 9px;
 
 }
 
@@ -69,6 +71,9 @@
 }
 
 .order-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   background-color: whitesmoke;
-  width: 400px;
+  width: 40%;
 }

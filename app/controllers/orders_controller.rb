@@ -1,12 +1,9 @@
-require 'pry'
-
 class OrdersController < ApplicationController
   before_action :authenticate_user!
 
   def index
     @orders = Order.where(:user_id == current_user.id)
   end
-
 
   def new
     @order = Order.new
@@ -16,6 +13,8 @@ class OrdersController < ApplicationController
   def create
     @order = Order.new
     @sneaker = Sneaker.find(params[:sneaker_id])
+    @sneaker.update_attribute(:bought, true)
+    # @sneaker.sell_trainers
     @order.sneaker = @sneaker
     @order.user = current_user
     if @order.save

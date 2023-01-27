@@ -1,7 +1,7 @@
 .flex-description {
   display: flex;
   flex-direction: column;
-  background-color: grey;
+  background-color: #c4c2c2;;
   height: 100%;
 }
 
@@ -25,5 +25,10 @@
 }
 
 .final-demo {
-  color: white;
+  color: #ae1414;
+  text-decoration: none;
+}
+
+.final-demo:hover {
+  color: rgb(81, 40, 40);
 }

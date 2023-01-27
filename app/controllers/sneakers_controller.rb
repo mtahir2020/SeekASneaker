@@ -5,9 +5,10 @@ class SneakersController < ApplicationController
   def index
     if params[:search]
       @search = params[:search]
-      @sneakers = Sneaker.where("name ILIKE ?", "%#{params[:search]}%")
+      @sneakers = Sneaker.where("name ILIKE ?", "%#{params[:search]}%").where(bought: false)
     else
-      @sneakers = Sneaker.all
+      # @sneakers = Sneaker.all
+      @sneakers = Sneaker.where(bought: false)
     end
   end
 
