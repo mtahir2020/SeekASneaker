@@ -3,8 +3,8 @@
   top: 56%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 1.5rem;
-  padding: 12px 120px;
+  font-size: 2rem;
+  padding: 20px 120px;
   background-color: rgb(183, 53, 64);;
 }
 
@@ -20,7 +20,7 @@
 }
 
 #buy-btn:hover {
-  background-color: #be1717;
+  background-color: #9d1346;;
 }
 
 .button {
@@ -35,7 +35,7 @@
 }
 
 .link-button {
-  background-color: #f1f4f1; /* Green */
+  background-color: #b6b7b6; /* Green */
   border: none;
   color: black;
   padding: 14px 32px;
@@ -43,6 +43,7 @@
   text-decoration: none;
   font-size: 16px;
   width: 100%;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
 .link-button:hover {
@@ -50,9 +51,8 @@
 }
 
 .test-button {
-  padding: 15px 32px;
+  padding: 0 32px;
   display: flex;
-
 }
 
 #back-btn,
@@ -68,6 +68,7 @@
   background-color: lightgrey;
   width: 164px;
   text-decoration: none;
+  color: black;
 }
 
 #back-btn a {
@@ -77,6 +78,6 @@
 
 #back-btn:hover {
   color: white;
-  background-color: rgb(172, 170, 170)
+  background-color: #8b8686;
 
 }

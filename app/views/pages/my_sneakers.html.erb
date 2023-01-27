@@ -4,32 +4,30 @@
    <div >
      <div >
       <% @sneakers.each do |sneaker| %>
-      <div class="d-flex justify-content-center mb-4">
-          <div class="shadow">
+      <div class="d-flex justify-content-center">
+          <div>
             <div>
-             <% sneaker.photos.each_with_index do |photo, index| %>
+              <% sneaker.photos.each_with_index do |photo, index| %>
                 <% if index == 0 %>
                   <%= cl_image_tag photo.key, height: 350, width: 400, crop: :fill, alt: sneaker.name %>
                 <% end %>
               <% end %>
             </div>
           </div>
-          <div class="card-background">
-            <div class="card-textbox flex-description sneaker-change shadow">
+          <div class="card-background" style="border-right: 1px solid #d0d0d0; border-top: 1px solid #d0d0d0; border-bottom: 1px solid #d0d0d0; width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center; text-align: center;">
+            <%# <div class="card-textbox flex-description sneaker-change shadow"> %>
               <div>
-              <p class="card-sneaker-text fs-5 pt-5 ps-2 fw-bold "><%= link_to sneaker.name.upcase, sneaker, class:'final-demo' %></p>
-              <p class= "pt-3"><%= sneaker.description %></p>
-              <p class="card-text fs-5 pe-2 pt-3 fw-bold">£<%= sneaker.price %></p>
-              <div class="column-buttons">
-                <%= link_to "Change", edit_sneaker_url(sneaker), id: "change-btn"%>
-                <%# <%= link_to "Delete",
-                  sneaker_path(sneaker),
-                  id: "delete-btn",
-                  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-                %> 
+                <p class="card-sneaker-text fw-bold "><%= link_to sneaker.name.upcase, sneaker, class:'final-demo' %></p>
+                <p><%= sneaker.description %></p>
+                <p class="card-text fw-bold">£<%= sneaker.price %></p>
+                <div class="column-buttons">
+                  <%= link_to "Change", edit_sneaker_url(sneaker), id: "change-btn"%>
+                </div>
               </div>
-            </div>
-            </div>
+            <%# </div> %>
           </div>
       </div>
     <% end %>

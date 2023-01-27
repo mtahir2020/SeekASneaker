@@ -8,23 +8,29 @@
   <div class="row">
     <% @orders.each do |order| %>
       <div class="col-4">
-      <div class="card-order">
-      <% order.sneaker.photos.each_with_index do |photo, index| %>
-      <% if index == 0 %>
-        <%= cl_image_tag photo.key, height: 340, width: 400, alt: order.sneaker.name %>
-      <% end %>
-      <% end %>
+        <div class="card-order">
+        <% order.sneaker.photos.each_with_index do |photo, index| %>
+          <% if index == 0 %>
+            <div style="width: 60%">
+              <%= cl_image_tag photo.key, height: 340, alt: order.sneaker.name %>
+            </div>
+          <% end %>
+        <% end %>
           <div class="order-card">
-            <h1 class="order-id">Order no.  <%= order.id %></h1>
-            <h3 class="text-order"><%= order.sneaker.name.capitalize %></h3>
+            <div>
+              <h1 class="order-id">Order <%= order.id %></h1>
+              <p class="order-spacing"><%= order.sneaker.created_at.strftime("%d-%m-%Y") %></p>
+            </div>
+            <h3 class="text-order"><%= order.sneaker.name.upcase %></h3>
             <p class="order-spacing">£<%= order.sneaker.price %></p>
-            <p class="order-spacing">Listed by: <%= order.sneaker.user.username %></p>
-            <p class="order-spacing">Made at: <%= order.sneaker.created_at.strftime("%d-%m-%Y") %></p>
+            <p class="order-spacing">Seller: <%= order.sneaker.user.username %></p>
           </div>
-      </div>
+        </div>
       </div>
     <% end %>
     </div>
   </div>
-  <div class="d-flex align-items-center justify-content-center"><%= link_to "Back to homepage", root_path, class: "ms-3 mb-3 btn btn-danger" %></div>
+  <div class="d-flex align-items-center justify-content-center" style="margin-top:20px">
+    <%= link_to "Back to homepage", root_path, class: "btn btn-danger" %>
+  </div>
 </div>
